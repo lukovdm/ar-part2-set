@@ -45,60 +45,60 @@ def make_model(
 
     cards = [Const(f"x__{i}", card) for i in range(card_count)]
 
-    s.add(
-        cards[0]
-        == card.c(
-            datatypes["colour"].constructor(2)(),
-            datatypes["shape"].constructor(0)(),
-            datatypes["fill"].constructor(0)(),
-            datatypes["count"].constructor(1)(),
-        )
-    )
-    s.add(
-        cards[1]
-        == card.c(
-            datatypes["colour"].constructor(2)(),
-            datatypes["shape"].constructor(0)(),
-            datatypes["fill"].constructor(1)(),
-            datatypes["count"].constructor(1)(),
-        )
-    )
-    s.add(
-        cards[2]
-        == card.c(
-            datatypes["colour"].constructor(2)(),
-            datatypes["shape"].constructor(2)(),
-            datatypes["fill"].constructor(1)(),
-            datatypes["count"].constructor(2)(),
-        )
-    )
-    s.add(
-        cards[3]
-        == card.c(
-            datatypes["colour"].constructor(2)(),
-            datatypes["shape"].constructor(2)(),
-            datatypes["fill"].constructor(1)(),
-            datatypes["count"].constructor(1)(),
-        )
-    )
-    s.add(
-        cards[4]
-        == card.c(
-            datatypes["colour"].constructor(1)(),
-            datatypes["shape"].constructor(1)(),
-            datatypes["fill"].constructor(2)(),
-            datatypes["count"].constructor(1)(),
-        )
-    )
-    s.add(
-        cards[5]
-        == card.c(
-            datatypes["colour"].constructor(0)(),
-            datatypes["shape"].constructor(2)(),
-            datatypes["fill"].constructor(2)(),
-            datatypes["count"].constructor(2)(),
-        )
-    )
+    # s.add(
+    #     cards[0]
+    #     == card.c(
+    #         datatypes["colour"].constructor(2)(),
+    #         datatypes["shape"].constructor(0)(),
+    #         datatypes["fill"].constructor(0)(),
+    #         datatypes["count"].constructor(1)(),
+    #     )
+    # )
+    # s.add(
+    #     cards[1]
+    #     == card.c(
+    #         datatypes["colour"].constructor(2)(),
+    #         datatypes["shape"].constructor(0)(),
+    #         datatypes["fill"].constructor(1)(),
+    #         datatypes["count"].constructor(1)(),
+    #     )
+    # )
+    # s.add(
+    #     cards[2]
+    #     == card.c(
+    #         datatypes["colour"].constructor(2)(),
+    #         datatypes["shape"].constructor(2)(),
+    #         datatypes["fill"].constructor(1)(),
+    #         datatypes["count"].constructor(2)(),
+    #     )
+    # )
+    # s.add(
+    #     cards[3]
+    #     == card.c(
+    #         datatypes["colour"].constructor(2)(),
+    #         datatypes["shape"].constructor(2)(),
+    #         datatypes["fill"].constructor(1)(),
+    #         datatypes["count"].constructor(1)(),
+    #     )
+    # )
+    # s.add(
+    #     cards[4]
+    #     == card.c(
+    #         datatypes["colour"].constructor(1)(),
+    #         datatypes["shape"].constructor(1)(),
+    #         datatypes["fill"].constructor(2)(),
+    #         datatypes["count"].constructor(1)(),
+    #     )
+    # )
+    # s.add(
+    #     cards[5]
+    #     == card.c(
+    #         datatypes["colour"].constructor(0)(),
+    #         datatypes["shape"].constructor(2)(),
+    #         datatypes["fill"].constructor(2)(),
+    #         datatypes["count"].constructor(2)(),
+    #     )
+    # )
 
     s.add(Distinct(cards))
 
