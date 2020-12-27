@@ -18,7 +18,7 @@ def set_constants() -> Dict[str, List[str]]:
 
     return types
 
-def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_order = True, second_order = True, third_order = True):
+def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_order, second_order, third_order, doubles):
     extra_cards = 0
     if third_order:
         assert card_count >= 6
@@ -59,7 +59,7 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
         c_2_o = Const("c_2_o", card)
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
-                if a_1 in [b_1, b_2] and a_2 in [b_1, b_2]:
+                if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
                     continue
 
                 s.add(Not(Exists([c_2_o], And(
@@ -94,10 +94,10 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
         d_3_o = [Const(f"c_3_o__{i}", card) for i in range(3)]
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
-                if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
+                if (a_1 in [b_1, b_2] or a_2 in [b_1, b_2]) and doubles:
                     continue
                 for c_1, c_2 in combinations(cards, 2):
-                    if c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]:
+                    if (c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]) and doubles:
                         continue
                 
                     s.add(Not(Exists(d_3_o, And(
@@ -146,18 +146,19 @@ if __name__ == "__main__":
     parser.add_argument("-1", "--first", action='store_true', help="remove first order sets")
     parser.add_argument("-2", "--second", action='store_true', help="remove second order sets")
     parser.add_argument("-3", "--third", action='store_true', help="remove third order sets")
+    parser.add_argument("-d", "--allow-doubles", action='store_true', help="allow doubles in third order sets")
 
     args = parser.parse_args()
 
     solver = Solver()
     print("========== Making model ==========")
-    cards, getters = make_model(solver, set_constants(), args.card_count, first_order=args.first, second_order=args.second, third_order=args.third)
+    cards, getters = make_model(solver, set_constants(), args.card_count, args.first, args.second, args.third, args.allow_doubles)
     print("======== Starting checking =======")
     t_1 = time()
     if solver.check() == sat:
         print("======== Finished checking =======")
         print(f"sat :) ({time() - t_1} s)")
-        draw_board(cards, solver.model(), getters, f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}")
+        draw_board(cards, solver.model(), getters, f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}{'d' if args.allow_doubles else ''}")
     else:
         print(f"unsat :( ({time() - t_1} s)")
     
