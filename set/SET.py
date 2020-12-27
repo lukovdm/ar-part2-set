@@ -3,8 +3,10 @@ from typing import Dict, List
 from itertools import combinations
 from math import sqrt
 from PIL import Image
-from z3 import *
 from time import time
+from argparse import ArgumentParser
+
+from z3 import *
 
 def set_constants() -> Dict[str, List[str]]:
     types = {
@@ -92,11 +94,11 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
         d_3_o = [Const(f"c_3_o__{i}", card) for i in range(3)]
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
-                # if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
-                #     continue
+                if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
+                    continue
                 for c_1, c_2 in combinations(cards, 2):
-                    # if c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]:
-                    #     continue
+                    if c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]:
+                        continue
                 
                     s.add(Not(Exists(d_3_o, And(
                         [
@@ -120,7 +122,7 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
     
     return cards, getters
 
-def draw_board(cs, m, gs):
+def draw_board(cs, m, gs, ex):
     names = [f"img/{m.eval(gs['colour'](card))}{m.eval(gs['shape'](card))}{m.eval(gs['fill'](card))}{m.eval(gs['count'](card))}.png" for card in cs]
     images = [Image.open(n) for n in names]
     c_w, c_h = images[0].size
@@ -134,21 +136,28 @@ def draw_board(cs, m, gs):
     for i, im in enumerate(images):
         field.paste(im, (i % i_w * c_w, int(i / i_w) * c_h))
     
-    field.save(f"board_{len(cs)}.png")
+    field.save(f"board_{len(cs)}{ex}.png")
     field.show()
 
 
 if __name__ == "__main__":
-    card_count = int(input("card count: "))
+    parser = ArgumentParser(description="Create a set board where certain sets can't be found.")
+    parser.add_argument("card_count", metavar="n", type=int, help="amount of cards on board")
+    parser.add_argument("-1", "--first", action='store_true', help="remove first order sets")
+    parser.add_argument("-2", "--second", action='store_true', help="remove second order sets")
+    parser.add_argument("-3", "--third", action='store_true', help="remove third order sets")
+
+    args = parser.parse_args()
+
     solver = Solver()
     print("========== Making model ==========")
-    cards, getters = make_model(solver, set_constants(), card_count)
+    cards, getters = make_model(solver, set_constants(), args.card_count, first_order=args.first, second_order=args.second, third_order=args.third)
     print("======== Starting checking =======")
     t_1 = time()
     if solver.check() == sat:
         print("======== Finished checking =======")
         print(f"sat :) ({time() - t_1} s)")
-        draw_board(cards, solver.model(), getters)
+        draw_board(cards, solver.model(), getters, f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}")
     else:
         print(f"unsat :( ({time() - t_1} s)")
     
