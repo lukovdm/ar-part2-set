@@ -107,10 +107,10 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
         d_3_o = [Const(f"c_3_o__{i}", card) for i in range(3)]
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
-                if not doubles and (a_1 in [b_1, b_2] or a_2 in [b_1, b_2]):
+                if not doubles and (a_1 in [b_1, b_2] or a_2 in [b_1, b_2]) or (a_1 in [b_1, b_2] and a_2 in [b_1, b_2]):
                     continue
                 for c_1, c_2 in combinations(cards, 2):
-                    if not doubles and (c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]):
+                    if not doubles and (c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]) or (a_1 in [c_1, c_2] and a_2 in [c_1, c_2]) or (b_1 in [c_1, c_2] and b_2 in [c_1, c_2]):
                         continue
 
                     con = Bool(f"3_{a_1}_{a_2}_{b_1}_{b_2}_{c_1}_{c_2}")
