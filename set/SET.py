@@ -1,7 +1,7 @@
 #!/bin/env python3
 from typing import Dict, List
 from itertools import combinations
-from math import comb, sqrt
+from math import sqrt
 from PIL import Image
 from z3 import *
 from time import time
