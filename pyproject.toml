@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "part2"
+version = "0.1.0"
+description = ""
+authors = ["Luko van der Maas <me@luko.dev>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Jinja2 = "^2.11.2"
+z3-solver = "^4.8.9"
+black = "^20.8b1"
+Pillow = "^8.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
