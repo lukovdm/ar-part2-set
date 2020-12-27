@@ -57,7 +57,7 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
         c_2_o = Const("c_2_o", card)
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
-                if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
+                if a_1 in [b_1, b_2] and a_2 in [b_1, b_2]:
                     continue
 
                 s.add(Not(Exists([c_2_o], And(
@@ -92,30 +92,31 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
         d_3_o = [Const(f"c_3_o__{i}", card) for i in range(3)]
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
-                if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
-                    continue
+                # if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
+                #     continue
                 for c_1, c_2 in combinations(cards, 2):
-                    if c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]:
-                        continue
+                    # if c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]:
+                    #     continue
                 
-                s.add(Not(Exists(d_3_o, And(
-                    [
-                        Or(And(g(a_1) == g(a_2), g(a_2) == g(d_3_o[0])), 
-                            Distinct(g(a_1), g(a_2), g(d_3_o[0]))) for _, g in getters.items()
-                    ] +
-                    [
-                        Or(And(g(b_1) == g(b_2), g(b_2) == g(d_3_o[1])), 
-                            Distinct(g(b_1), g(b_2), g(d_3_o[1]))) for _, g in getters.items()
-                    ] +
-                    [
-                        Or(And(g(c_1) == g(c_2), g(c_2) == g(d_3_o[2])), 
-                            Distinct(g(c_1), g(c_2), g(d_3_o[2]))) for _, g in getters.items()
-                    ] +
-                    [
-                        Or(And(g(d_3_o[0]) == g(d_3_o[1]), g(d_3_o[1]) == g(d_3_o[2])), 
-                            Distinct(g(d_3_o[0]), g(d_3_o[1]), g(d_3_o[2]))) for _, g in getters.items()
-                    ]
-                ))))
+                    s.add(Not(Exists(d_3_o, And(
+                        [
+                            Or(And(g(a_1) == g(a_2), g(a_2) == g(d_3_o[0])), 
+                                Distinct(g(a_1), g(a_2), g(d_3_o[0]))) for _, g in getters.items()
+                        ] +
+                        [
+                            Or(And(g(b_1) == g(b_2), g(b_2) == g(d_3_o[1])), 
+                                Distinct(g(b_1), g(b_2), g(d_3_o[1]))) for _, g in getters.items()
+                        ] +
+                        [
+                            Or(And(g(c_1) == g(c_2), g(c_2) == g(d_3_o[2])), 
+                                Distinct(g(c_1), g(c_2), g(d_3_o[2]))) for _, g in getters.items()
+                        ] +
+                        [
+                            Or(And(g(d_3_o[0]) == g(d_3_o[1]), g(d_3_o[1]) == g(d_3_o[2])), 
+                                Distinct(g(d_3_o[0]), g(d_3_o[1]), g(d_3_o[2]))) for _, g in getters.items()
+                        ] +
+                        [Distinct(d_3_o)]
+                    ))))
     
     return cards, getters
 
