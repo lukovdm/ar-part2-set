@@ -94,10 +94,10 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
         d_3_o = [Const(f"c_3_o__{i}", card) for i in range(3)]
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
-                if (a_1 in [b_1, b_2] or a_2 in [b_1, b_2]) and doubles:
+                if (a_1 in [b_1, b_2] or a_2 in [b_1, b_2]) and not doubles:
                     continue
                 for c_1, c_2 in combinations(cards, 2):
-                    if (c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]) and doubles:
+                    if (c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]) and not doubles:
                         continue
                 
                     s.add(Not(Exists(d_3_o, And(
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     parser.add_argument("-1", "--first", action='store_true', help="remove first order sets")
     parser.add_argument("-2", "--second", action='store_true', help="remove second order sets")
     parser.add_argument("-3", "--third", action='store_true', help="remove third order sets")
-    parser.add_argument("-d", "--allow-doubles", action='store_true', help="allow doubles in third order sets")
+    parser.add_argument("-d", "--allow-doubles", action='store_false', help="allow doubles in third order sets")
 
     args = parser.parse_args()
 
