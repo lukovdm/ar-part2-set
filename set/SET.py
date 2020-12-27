@@ -106,21 +106,21 @@ def make_model(
 
     if first_order:
         for c_1, c_2, c_3 in combinations(cards, 3):
-            con = Bool(f"1_{c_1}_{c_2}_{c_3}")
+            # con = Bool(f"1_{c_1}_{c_2}_{c_3}")
             s.add(
-                Implies(
-                    con,
-                    Not(
-                        And(
-                            [
-                                Or(And(g(c_1) == g(c_2), g(c_2) == g(c_3)), Distinct(g(c_1), g(c_2), g(c_3)))
-                                for _, g in getters.items()
-                            ]
-                        )
-                    ),
-                )
+                # Implies(
+                #     con,
+                Not(
+                    And(
+                        [
+                            Or(And(g(c_1) == g(c_2), g(c_2) == g(c_3)), Distinct(g(c_1), g(c_2), g(c_3)))
+                            for _, g in getters.items()
+                        ]
+                    )
+                ),
+                # )
             )
-            constraints.append(con)
+            # constraints.append(con)
         log("made first order constraints")
 
     if second_order:
@@ -130,34 +130,34 @@ def make_model(
                 if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
                     continue
 
-                con = Bool(f"2_{a_1}_{a_2}_{b_1}_{b_2}")
+                # con = Bool(f"2_{a_1}_{a_2}_{b_1}_{b_2}")
                 s.add(
-                    Implies(
-                        con,
-                        Not(
-                            Exists(
-                                [c_2_o],
-                                And(
-                                    [
-                                        Or(
-                                            And(g(a_1) == g(a_2), g(a_2) == g(c_2_o)),
-                                            Distinct(g(a_1), g(a_2), g(c_2_o)),
-                                        )
-                                        for _, g in getters.items()
-                                    ]
-                                    + [
-                                        Or(
-                                            And(g(b_1) == g(b_2), g(b_2) == g(c_2_o)),
-                                            Distinct(g(b_1), g(b_2), g(c_2_o)),
-                                        )
-                                        for _, g in getters.items()
-                                    ]
-                                ),
-                            )
-                        ),
-                    )
+                    # Implies(
+                    #     con,
+                    Not(
+                        Exists(
+                            [c_2_o],
+                            And(
+                                [
+                                    Or(
+                                        And(g(a_1) == g(a_2), g(a_2) == g(c_2_o)),
+                                        Distinct(g(a_1), g(a_2), g(c_2_o)),
+                                    )
+                                    for _, g in getters.items()
+                                ]
+                                + [
+                                    Or(
+                                        And(g(b_1) == g(b_2), g(b_2) == g(c_2_o)),
+                                        Distinct(g(b_1), g(b_2), g(c_2_o)),
+                                    )
+                                    for _, g in getters.items()
+                                ]
+                            ),
+                        )
+                    ),
+                    # )
                 )
-                constraints.append(con)
+                # constraints.append(con)
         log("made second order constraints")
 
         # Old harder to understand second order code
@@ -196,49 +196,49 @@ def make_model(
                     ):
                         continue
 
-                    con = Bool(f"3_{a_1}_{a_2}_{b_1}_{b_2}_{c_1}_{c_2}")
+                    # con = Bool(f"3_{a_1}_{a_2}_{b_1}_{b_2}_{c_1}_{c_2}")
                     s.add(
-                        Implies(
-                            con,
-                            Not(
-                                Exists(
-                                    d_3_o,
-                                    And(
-                                        [
-                                            Or(
-                                                And(g(a_1) == g(a_2), g(a_2) == g(d_3_o[0])),
-                                                Distinct(g(a_1), g(a_2), g(d_3_o[0])),
-                                            )
-                                            for _, g in getters.items()
-                                        ]
-                                        + [
-                                            Or(
-                                                And(g(b_1) == g(b_2), g(b_2) == g(d_3_o[1])),
-                                                Distinct(g(b_1), g(b_2), g(d_3_o[1])),
-                                            )
-                                            for _, g in getters.items()
-                                        ]
-                                        + [
-                                            Or(
-                                                And(g(c_1) == g(c_2), g(c_2) == g(d_3_o[2])),
-                                                Distinct(g(c_1), g(c_2), g(d_3_o[2])),
-                                            )
-                                            for _, g in getters.items()
-                                        ]
-                                        + [
-                                            Or(
-                                                And(g(d_3_o[0]) == g(d_3_o[1]), g(d_3_o[1]) == g(d_3_o[2])),
-                                                Distinct(g(d_3_o[0]), g(d_3_o[1]), g(d_3_o[2])),
-                                            )
-                                            for _, g in getters.items()
-                                        ]
-                                        + [Distinct(d_3_o)]
-                                    ),
-                                )
-                            ),
-                        )
+                        # Implies(
+                        #     con,
+                        Not(
+                            Exists(
+                                d_3_o,
+                                And(
+                                    [
+                                        Or(
+                                            And(g(a_1) == g(a_2), g(a_2) == g(d_3_o[0])),
+                                            Distinct(g(a_1), g(a_2), g(d_3_o[0])),
+                                        )
+                                        for _, g in getters.items()
+                                    ]
+                                    + [
+                                        Or(
+                                            And(g(b_1) == g(b_2), g(b_2) == g(d_3_o[1])),
+                                            Distinct(g(b_1), g(b_2), g(d_3_o[1])),
+                                        )
+                                        for _, g in getters.items()
+                                    ]
+                                    + [
+                                        Or(
+                                            And(g(c_1) == g(c_2), g(c_2) == g(d_3_o[2])),
+                                            Distinct(g(c_1), g(c_2), g(d_3_o[2])),
+                                        )
+                                        for _, g in getters.items()
+                                    ]
+                                    + [
+                                        Or(
+                                            And(g(d_3_o[0]) == g(d_3_o[1]), g(d_3_o[1]) == g(d_3_o[2])),
+                                            Distinct(g(d_3_o[0]), g(d_3_o[1]), g(d_3_o[2])),
+                                        )
+                                        for _, g in getters.items()
+                                    ]
+                                    + [Distinct(d_3_o)]
+                                ),
+                            )
+                        ),
+                        # )
                     )
-                    constraints.append(con)
+                    # constraints.append(con)
         log("made third order constraints")
 
     return cards, getters, constraints
