@@ -8,6 +8,13 @@ from argparse import ArgumentParser
 
 from z3 import *
 
+t = time()
+
+
+def log(message):
+    print(f"[{time() - t:.3f} s] {message}")
+
+
 def set_constants() -> Dict[str, List[str]]:
     types = {
         "colour": ["purple", "red", "green"],
@@ -53,6 +60,7 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
                 Or(And(g(c_1) == g(c_2), g(c_2) == g(c_3)), 
                     Distinct(g(c_1), g(c_2), g(c_3))) for _, g in getters.items()
             ])))
+        log("made first order constraints")
 
     
     if second_order:
@@ -72,6 +80,7 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
                             Distinct(g(b_1), g(b_2), g(c_2_o))) for _, g in getters.items()
                     ]
                 ))))
+        log("made second order constraints")
 
         # Old harder to understand second order code
         # for a_1, a_2 in combinations(cards, 2):
@@ -119,6 +128,7 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
                         ] +
                         [Distinct(d_3_o)]
                     ))))
+        log("made third order constraints")
     
     return cards, getters
 
@@ -151,14 +161,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     solver = Solver()
-    print("========== Making model ==========")
+    log("==== Making model ====")
     cards, getters = make_model(solver, set_constants(), args.card_count, args.first, args.second, args.third, args.allow_doubles)
-    print("======== Starting checking =======")
-    t_1 = time()
+    log("==== Starting checking ====")
     if solver.check() == sat:
-        print("======== Finished checking =======")
-        print(f"sat :) ({time() - t_1} s)")
+        log("==== Finished checking ====")
+        log("sat :)")
         draw_board(cards, solver.model(), getters, f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}{'d' if args.allow_doubles else ''}")
     else:
-        print(f"unsat :( ({time() - t_1} s)")
+        log("unsat :(")
     
