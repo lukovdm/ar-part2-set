@@ -26,14 +26,6 @@ def set_constants() -> Dict[str, List[str]]:
     return types
 
 def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_order, second_order, third_order, doubles):
-    extra_cards = 0
-    if third_order:
-        assert card_count >= 6
-    elif second_order:
-        assert card_count >= 4
-    else:
-        assert card_count >= 3
-    
     datatypes: Dict[str, Datatype] = {}
     for key, val in types.items():
         attr = Datatype(key)
@@ -49,17 +41,26 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
     attrs = [datatypes[key].constructor(0)() for key in datatypes.keys()]
 
     cards = [Const(f"x__{i}", card) for i in range(card_count)]
-
-    s.add(cards[0] == card.c(*attrs))
+    
+    # s.add(cards[0] == card.c(datatypes["colour"].constructor(2)(), datatypes["shape"].constructor(0)(), datatypes["fill"].constructor(0)(), datatypes["count"].constructor(1)()))
+    # s.add(cards[1] == card.c(datatypes["colour"].constructor(2)(), datatypes["shape"].constructor(0)(), datatypes["fill"].constructor(1)(), datatypes["count"].constructor(1)()))
+    # s.add(cards[2] == card.c(datatypes["colour"].constructor(2)(), datatypes["shape"].constructor(2)(), datatypes["fill"].constructor(1)(), datatypes["count"].constructor(2)()))
+    # s.add(cards[3] == card.c(datatypes["colour"].constructor(2)(), datatypes["shape"].constructor(2)(), datatypes["fill"].constructor(1)(), datatypes["count"].constructor(1)()))
+    # s.add(cards[4] == card.c(datatypes["colour"].constructor(1)(), datatypes["shape"].constructor(1)(), datatypes["fill"].constructor(2)(), datatypes["count"].constructor(1)()))
+    # s.add(cards[5] == card.c(datatypes["colour"].constructor(0)(), datatypes["shape"].constructor(2)(), datatypes["fill"].constructor(2)(), datatypes["count"].constructor(2)()))
 
     s.add(Distinct(cards))
+
+    constraints = []
     
     if first_order:
         for c_1, c_2, c_3 in combinations(cards, 3):
-            s.add(Not(And([
+            con = Bool(f"1_{c_1}_{c_2}_{c_3}")
+            s.add(Implies(con, Not(And([
                 Or(And(g(c_1) == g(c_2), g(c_2) == g(c_3)), 
                     Distinct(g(c_1), g(c_2), g(c_3))) for _, g in getters.items()
-            ])))
+            ]))))
+            constraints.append(con)
         log("made first order constraints")
 
     
@@ -70,7 +71,9 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
                 if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
                     continue
 
-                s.add(Not(Exists([c_2_o], And(
+                con = Bool(f"2_{a_1}_{a_2}_{b_1}_{b_2}")
+
+                s.add(Implies(con, Not(Exists([c_2_o], And(
                     [
                         Or(And(g(a_1) == g(a_2), g(a_2) == g(c_2_o)), 
                             Distinct(g(a_1), g(a_2), g(c_2_o))) for _, g in getters.items()
@@ -79,7 +82,8 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
                         Or(And(g(b_1) == g(b_2), g(b_2) == g(c_2_o)), 
                             Distinct(g(b_1), g(b_2), g(c_2_o))) for _, g in getters.items()
                     ]
-                ))))
+                )))))
+                constraints.append(con)
         log("made second order constraints")
 
         # Old harder to understand second order code
@@ -108,8 +112,9 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
                 for c_1, c_2 in combinations(cards, 2):
                     if not doubles and (c_1 in [a_1, b_1, a_2, b_2] or c_2 in [a_1, b_1, a_2, b_2]):
                         continue
-                
-                    s.add(Not(Exists(d_3_o, And(
+
+                    con = Bool(f"3_{a_1}_{a_2}_{b_1}_{b_2}_{c_1}_{c_2}")
+                    s.add(Implies(con, Not(Exists(d_3_o, And(
                         [
                             Or(And(g(a_1) == g(a_2), g(a_2) == g(d_3_o[0])), 
                                 Distinct(g(a_1), g(a_2), g(d_3_o[0]))) for _, g in getters.items()
@@ -127,10 +132,11 @@ def make_model(s: Solver, types: Dict[str, List[str]], card_count: int, first_or
                                 Distinct(g(d_3_o[0]), g(d_3_o[1]), g(d_3_o[2]))) for _, g in getters.items()
                         ] +
                         [Distinct(d_3_o)]
-                    ))))
+                    )))))
+                    constraints.append(con)
         log("made third order constraints")
     
-    return cards, getters
+    return cards, getters, constraints
 
 def draw_board(cs, m, gs, ex):
     names = [f"img/{m.eval(gs['colour'](card))}{m.eval(gs['shape'](card))}{m.eval(gs['fill'](card))}{m.eval(gs['count'](card))}.png" for card in cs]
@@ -162,12 +168,13 @@ if __name__ == "__main__":
 
     solver = Solver()
     log("==== Making model ====")
-    cards, getters = make_model(solver, set_constants(), args.card_count, args.first, args.second, args.third, args.allow_doubles)
+    cards, getters, cons = make_model(solver, set_constants(), args.card_count, args.first, args.second, args.third, args.allow_doubles)
     log("==== Starting checking ====")
-    if solver.check() == sat:
+    if solver.check(cons) == sat:
         log("==== Finished checking ====")
         log("sat :)")
         draw_board(cards, solver.model(), getters, f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}_{'d' if args.allow_doubles else 'nd'}")
     else:
         log("unsat :(")
+        print(solver.unsat_core())
     
