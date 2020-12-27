@@ -167,7 +167,7 @@ if __name__ == "__main__":
     if solver.check() == sat:
         log("==== Finished checking ====")
         log("sat :)")
-        draw_board(cards, solver.model(), getters, f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}{'d' if args.allow_doubles else ''}")
+        draw_board(cards, solver.model(), getters, f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}_{'d' if args.allow_doubles else 'nd'}")
     else:
         log("unsat :(")
     
