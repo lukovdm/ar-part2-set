@@ -1,0 +1,27 @@
+sat
+179.1171486377716
+(:added-eqs               5266823
+ :arith-make-feasible     1
+ :arith-max-columns       4
+ :binary-propagations     101104802
+ :conflicts               142488
+ :datatype-accessor-ax    14573
+ :datatype-constructor-ax 148494
+ :datatype-occurs-check   20
+ :datatype-splits         425594
+ :decisions               379262
+ :del-clause              122803
+ :dyn-ack                 182
+ :eliminated-vars         1
+ :final-checks            1
+ :max-memory              21.69
+ :memory                  8.50
+ :minimized-lits          1097984
+ :mk-bool-var             78523
+ :mk-clause               157489
+ :num-allocs              6254592912.00
+ :num-checks              1
+ :propagations            146284712
+ :restarts                380
+ :rlimit-count            300791579
+ :time                    89.07)

@@ -2,4 +2,5 @@
 /network
 /rewriting
 /villages
-/set/board*.png
+/board*.png
+/res*.txt

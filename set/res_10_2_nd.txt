@@ -1,0 +1,23 @@
+unknown
+2516.9242141246796
+(:added-eqs               1303524032
+ :binary-propagations     388800595
+ :conflicts               3614959
+ :datatype-accessor-ax    22
+ :datatype-constructor-ax 8597994
+ :datatype-splits         3340660
+ :decisions               7401626
+ :del-clause              3549676
+ :dyn-ack                 35
+ :eliminated-vars         1
+ :max-memory              29.08
+ :memory                  10.36
+ :minimized-lits          87776386
+ :mk-bool-var             30261
+ :mk-clause               3616575
+ :num-allocs              154250455243.00
+ :num-checks              1
+ :propagations            1977483288
+ :restarts                1660
+ :rlimit-count            4790437543.00
+ :time                    2483.57)

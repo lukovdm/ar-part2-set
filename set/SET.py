@@ -15,6 +15,26 @@ def log(message):
     print(f"[{time() - t:.3f} s] {message}")
 
 
+def is_set_prop(c_1, c_2, c_3):
+    return Or(And(c_1 == c_2, c_2 == c_3), Distinct(c_1, c_2, c_3))
+
+
+def last_card(g, k, datatypes, c_1, c_2):
+    return If(
+        g(c_1) == g(c_2),
+        g(c_1),
+        If(
+            Distinct(datatypes[k].constructor(0)(), g(c_1), g(c_2)),
+            datatypes[k].constructor(0)(),
+            If(
+                Distinct(datatypes[k].constructor(1)(), g(c_1), g(c_2)),
+                datatypes[k].constructor(1)(),
+                datatypes[k].constructor(2)(),
+            ),
+        ),
+    )
+
+
 def set_constants() -> Dict[str, List[str]]:
     types = {
         "colour": ["purple", "red", "green"],
@@ -31,6 +51,7 @@ def make_model(
 ):
     datatypes: Dict[str, Datatype] = {}
     for key, val in types.items():
+        assert len(val) == 3
         attr = Datatype(key)
         for opt in val:
             attr.declare(opt)
@@ -41,144 +62,50 @@ def make_model(
     card.declare("c", *datatypes.items())
     card = card.create()
     getters = {list(types.keys())[i]: card.accessor(0, i) for i in range(len(types))}
-    attrs = [datatypes[key].constructor(0)() for key in datatypes.keys()]
+    attrs = [dt.constructor(0)() for dt in datatypes.values()]
 
     cards = [Const(f"x__{i}", card) for i in range(card_count)]
 
-    # s.add(
-    #     cards[0]
-    #     == card.c(
-    #         datatypes["colour"].constructor(2)(),
-    #         datatypes["shape"].constructor(0)(),
-    #         datatypes["fill"].constructor(0)(),
-    #         datatypes["count"].constructor(1)(),
-    #     )
-    # )
-    # s.add(
-    #     cards[1]
-    #     == card.c(
-    #         datatypes["colour"].constructor(2)(),
-    #         datatypes["shape"].constructor(0)(),
-    #         datatypes["fill"].constructor(1)(),
-    #         datatypes["count"].constructor(1)(),
-    #     )
-    # )
-    # s.add(
-    #     cards[2]
-    #     == card.c(
-    #         datatypes["colour"].constructor(2)(),
-    #         datatypes["shape"].constructor(2)(),
-    #         datatypes["fill"].constructor(1)(),
-    #         datatypes["count"].constructor(2)(),
-    #     )
-    # )
-    # s.add(
-    #     cards[3]
-    #     == card.c(
-    #         datatypes["colour"].constructor(2)(),
-    #         datatypes["shape"].constructor(2)(),
-    #         datatypes["fill"].constructor(1)(),
-    #         datatypes["count"].constructor(1)(),
-    #     )
-    # )
-    # s.add(
-    #     cards[4]
-    #     == card.c(
-    #         datatypes["colour"].constructor(1)(),
-    #         datatypes["shape"].constructor(1)(),
-    #         datatypes["fill"].constructor(2)(),
-    #         datatypes["count"].constructor(1)(),
-    #     )
-    # )
-    # s.add(
-    #     cards[5]
-    #     == card.c(
-    #         datatypes["colour"].constructor(0)(),
-    #         datatypes["shape"].constructor(2)(),
-    #         datatypes["fill"].constructor(2)(),
-    #         datatypes["count"].constructor(2)(),
-    #     )
-    # )
+    # optimisations
+    s.add(cards[0] == card.c(*attrs))
+    s.add(And([
+        Implies(getters[k](cards[1]) == getters[k](cards[0]),
+            And([
+                getters[o_k](cards[1]) == getters[o_k](cards[0])
+                for o_k in list(datatypes.keys())[i:]
+            ])
+        )
+        for i, k in enumerate(datatypes.keys())
+    ]))
 
+    # constraints
     s.add(Distinct(cards))
 
     constraints = []
 
     if first_order:
         for c_1, c_2, c_3 in combinations(cards, 3):
-            # con = Bool(f"1_{c_1}_{c_2}_{c_3}")
-            s.add(
-                # Implies(
-                #     con,
-                Not(
-                    And(
-                        [
-                            Or(And(g(c_1) == g(c_2), g(c_2) == g(c_3)), Distinct(g(c_1), g(c_2), g(c_3)))
-                            for _, g in getters.items()
-                        ]
-                    )
-                ),
-                # )
-            )
-            # constraints.append(con)
+            s.add(Not(And([is_set_prop(g(c_1), g(c_2), g(c_3)) for _, g in getters.items()])))
         log("made first order constraints")
 
     if second_order:
-        c_2_o = Const("c_2_o", card)
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
                 if a_1 in [b_1, b_2] or a_2 in [b_1, b_2]:
                     continue
-
-                # con = Bool(f"2_{a_1}_{a_2}_{b_1}_{b_2}")
                 s.add(
-                    # Implies(
-                    #     con,
                     Not(
-                        Exists(
-                            [c_2_o],
-                            And(
-                                [
-                                    Or(
-                                        And(g(a_1) == g(a_2), g(a_2) == g(c_2_o)),
-                                        Distinct(g(a_1), g(a_2), g(c_2_o)),
-                                    )
-                                    for _, g in getters.items()
-                                ]
-                                + [
-                                    Or(
-                                        And(g(b_1) == g(b_2), g(b_2) == g(c_2_o)),
-                                        Distinct(g(b_1), g(b_2), g(c_2_o)),
-                                    )
-                                    for _, g in getters.items()
-                                ]
-                            ),
+                        And(
+                            [
+                                last_card(g, k, datatypes, a_1, a_2) == last_card(g, k, datatypes, b_1, b_2)
+                                for k, g in getters.items()
+                            ]
                         )
-                    ),
-                    # )
+                    )
                 )
-                # constraints.append(con)
         log("made second order constraints")
 
-        # Old harder to understand second order code
-        # for a_1, a_2 in combinations(cards, 2):
-        #     for b_1, b_2 in combinations(cards, 2):
-        #         if a_1 == b_1 or a_1 == b_2 or a_2 == b_1 or a_2 == b_2:
-        #             continue
-        #         s.add(Not(And([
-        #             If(g(a_1) == g(a_2),
-        #                 Or(And(g(b_1) == g(b_2), g(b_1) == g(a_1)),
-        #                     And(Distinct(g(b_1), g(b_2)), g(b_1) != g(a_1), g(b_2) != g(a_1))),
-        #                 Or(And(g(b_1) == g(b_2), Distinct(g(b_1), g(a_1), g(a_2))),
-        #                     And(g(b_1) != g(b_2), Or([
-        #                         And(g(a_1) != c, g(a_2) != c, g(b_1) != c, g(b_2) != c)
-        #                         for c in [datatypes[k].constructor(i)() for i in range(datatypes[k].num_constructors())]
-        #                     ]))))
-        #             for k, g in getters.items()
-        #         ])))
-
     if third_order:
-        d_3_o = [Const(f"c_3_o__{i}", card) for i in range(3)]
         for a_1, a_2 in combinations(cards, 2):
             for b_1, b_2 in combinations(cards, 2):
                 if (
@@ -196,49 +123,20 @@ def make_model(
                     ):
                         continue
 
-                    # con = Bool(f"3_{a_1}_{a_2}_{b_1}_{b_2}_{c_1}_{c_2}")
                     s.add(
-                        # Implies(
-                        #     con,
                         Not(
-                            Exists(
-                                d_3_o,
-                                And(
-                                    [
-                                        Or(
-                                            And(g(a_1) == g(a_2), g(a_2) == g(d_3_o[0])),
-                                            Distinct(g(a_1), g(a_2), g(d_3_o[0])),
-                                        )
-                                        for _, g in getters.items()
-                                    ]
-                                    + [
-                                        Or(
-                                            And(g(b_1) == g(b_2), g(b_2) == g(d_3_o[1])),
-                                            Distinct(g(b_1), g(b_2), g(d_3_o[1])),
-                                        )
-                                        for _, g in getters.items()
-                                    ]
-                                    + [
-                                        Or(
-                                            And(g(c_1) == g(c_2), g(c_2) == g(d_3_o[2])),
-                                            Distinct(g(c_1), g(c_2), g(d_3_o[2])),
-                                        )
-                                        for _, g in getters.items()
-                                    ]
-                                    + [
-                                        Or(
-                                            And(g(d_3_o[0]) == g(d_3_o[1]), g(d_3_o[1]) == g(d_3_o[2])),
-                                            Distinct(g(d_3_o[0]), g(d_3_o[1]), g(d_3_o[2])),
-                                        )
-                                        for _, g in getters.items()
-                                    ]
-                                    + [Distinct(d_3_o)]
-                                ),
+                            And(
+                                [
+                                    is_set_prop(
+                                        last_card(g, k, datatypes, a_1, a_2),
+                                        last_card(g, k, datatypes, b_1, b_2),
+                                        last_card(g, k, datatypes, c_1, c_2),
+                                    )
+                                    for k, g in getters.items()
+                                ]
                             )
-                        ),
-                        # )
+                        )
                     )
-                    # constraints.append(con)
         log("made third order constraints")
 
     return cards, getters, constraints
@@ -261,8 +159,38 @@ def draw_board(cs, m, gs, ex):
     for i, im in enumerate(images):
         field.paste(im, (i % i_w * c_w, int(i / i_w) * c_h))
 
-    field.save(f"board_{len(cs)}{ex}.png")
+    field.save(f"board_{ex}.png")
     field.show()
+
+
+def main(card_count, first, second, third, doubles):
+    solver = Solver()
+    log("---- Making model ----")
+    cards, getters, cons = make_model(
+        solver, set_constants(), card_count, first, second, third, doubles
+    )
+    log("---- Starting checking ----")
+    result = solver.check(cons)
+    filename = f"{card_count}_{'1' if first else ''}{'2' if second else ''}{'3' if third else ''}_{'d' if doubles else 'nd'}"
+    if result == sat:
+        log("---- Finished checking ----")
+        log("sat :)")
+        draw_board(
+            cards,
+            solver.model(),
+            getters,
+            filename,
+        )
+    else:
+        log("unsat :(")
+        print(solver.unsat_core())
+    
+    with open(f"res_{filename}.txt", "w") as f:
+        f.write(str(result) + "\n")
+        f.write(str(time() - t) + "\n")
+        f.write(str(solver.statistics()) + "\n")
+
+    return result
 
 
 if __name__ == "__main__":
@@ -272,24 +200,15 @@ if __name__ == "__main__":
     parser.add_argument("-2", "--second", action="store_true", help="remove second order sets")
     parser.add_argument("-3", "--third", action="store_true", help="remove third order sets")
     parser.add_argument("-d", "--allow-doubles", action="store_true", help="allow doubles in third order sets")
+    parser.add_argument("-i", "--increasing", action="store_true", help="check for increasing card count till unsat from n")
 
     args = parser.parse_args()
 
-    solver = Solver()
-    log("==== Making model ====")
-    cards, getters, cons = make_model(
-        solver, set_constants(), args.card_count, args.first, args.second, args.third, args.allow_doubles
-    )
-    log("==== Starting checking ====")
-    if solver.check(cons) == sat:
-        log("==== Finished checking ====")
-        log("sat :)")
-        draw_board(
-            cards,
-            solver.model(),
-            getters,
-            f"_{'1' if args.first else ''}{'2' if args.second else ''}{'3' if args.third else ''}_{'d' if args.allow_doubles else 'nd'}",
-        )
+    if args.increasing:
+        n = args.card_count
+        log(f"==== Checking for n = {n} ====")
+        while main(n, args.first, args.second, args.third, args.allow_doubles) == sat:
+            n += 1
+            log(f"==== Checking for n = {n} ====")
     else:
-        log("unsat :(")
-        print(solver.unsat_core())
+        main(args.card_count, args.first, args.second, args.third, args.allow_doubles)
