@@ -1,27 +1,27 @@
 sat
-179.1171486377716
-(:added-eqs               5266823
+102.46293449401855
+(:added-eqs               5465182
  :arith-make-feasible     1
  :arith-max-columns       4
- :binary-propagations     101104802
- :conflicts               142488
- :datatype-accessor-ax    14573
- :datatype-constructor-ax 148494
+ :binary-propagations     112220870
+ :conflicts               155643
+ :datatype-accessor-ax    15287
+ :datatype-constructor-ax 173301
  :datatype-occurs-check   20
- :datatype-splits         425594
- :decisions               379262
- :del-clause              122803
- :dyn-ack                 182
+ :datatype-splits         453240
+ :decisions               392370
+ :del-clause              133813
+ :dyn-ack                 183
  :eliminated-vars         1
  :final-checks            1
- :max-memory              21.69
- :memory                  8.50
- :minimized-lits          1097984
- :mk-bool-var             78523
- :mk-clause               157489
- :num-allocs              6254592912.00
+ :max-memory              21.66
+ :memory                  8.31
+ :minimized-lits          1291503
+ :mk-bool-var             65765
+ :mk-clause               170644
+ :num-allocs              1498004242
  :num-checks              1
- :propagations            146284712
- :restarts                380
- :rlimit-count            300791579
- :time                    89.07)
+ :propagations            162166107
+ :restarts                404
+ :rlimit-count            173834135
+ :time                    99.89)

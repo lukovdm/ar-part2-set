@@ -68,6 +68,17 @@ def make_model(
 
     # optimisations
     s.add(cards[0] == card.c(*attrs))
+    # for i, c in enumerate(cards[1:]):
+    #     o = cards[i-1]
+    #     s.add(And([
+    #         Implies(getters[k](o) == getters[k](c),
+    #             And([
+    #                 getters[o_k](o) == getters[o_k](cards[0])
+    #                 for o_k in list(datatypes.keys())[i:]
+    #             ])
+    #         )
+    #         for i, k in enumerate(datatypes.keys())
+    #     ]))
     s.add(And([
         Implies(getters[k](cards[1]) == getters[k](cards[0]),
             And([

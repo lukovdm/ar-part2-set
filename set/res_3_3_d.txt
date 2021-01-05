@@ -1,0 +1,25 @@
+sat
+0.22859644889831543
+(:added-eqs               332
+ :arith-make-feasible     1
+ :arith-max-columns       4
+ :binary-propagations     609
+ :conflicts               15
+ :datatype-accessor-ax    15
+ :datatype-constructor-ax 48
+ :datatype-occurs-check   7
+ :datatype-splits         44
+ :decisions               419
+ :del-clause              1
+ :eliminated-vars         1
+ :final-checks            1
+ :max-memory              3.16
+ :memory                  2.55
+ :minimized-lits          2
+ :mk-bool-var             277
+ :mk-clause               110
+ :num-allocs              439941
+ :num-checks              1
+ :propagations            733
+ :rlimit-count            30419
+ :time                    0.02)

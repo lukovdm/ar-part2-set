@@ -1,23 +1,23 @@
 unknown
-2516.9242141246796
-(:added-eqs               1303524032
- :binary-propagations     388800595
- :conflicts               3614959
+1039.9062933921814
+(:added-eqs               382305354
+ :binary-propagations     118824297
+ :conflicts               1049657
  :datatype-accessor-ax    22
- :datatype-constructor-ax 8597994
- :datatype-splits         3340660
- :decisions               7401626
- :del-clause              3549676
- :dyn-ack                 35
+ :datatype-constructor-ax 2664823
+ :datatype-splits         1158200
+ :decisions               3303928
+ :del-clause              984606
+ :dyn-ack                 31
  :eliminated-vars         1
- :max-memory              29.08
- :memory                  10.36
- :minimized-lits          87776386
- :mk-bool-var             30261
- :mk-clause               3616575
- :num-allocs              154250455243.00
+ :max-memory              22.02
+ :memory                  8.34
+ :minimized-lits          22376237
+ :mk-bool-var             28565
+ :mk-clause               1051267
+ :num-allocs              14101293078.00
  :num-checks              1
- :propagations            1977483288
- :restarts                1660
- :rlimit-count            4790437543.00
- :time                    2483.57)
+ :propagations            482674064
+ :restarts                1099
+ :rlimit-count            1322819257
+ :time                    1028.47)
