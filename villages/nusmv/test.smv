@@ -1,0 +1,51 @@
+MODULE main
+DEFINE
+    distance := [[-1, 1], [1, -1]];
+VAR
+    t_content : 0..10;
+    v_content : array 0..1 of -1..10;
+    v_alive : array 0..1 of boolean;
+    loc : 0..1;
+
+
+INIT v_content[1] = 10;
+INIT v_alive[1] = TRUE;
+
+
+INIT t_content = 10;
+INIT loc = 0;
+
+INVAR v_content[0] = -1;
+INVAR v_alive[0] = TRUE;
+
+
+INVAR v_content[1] <= 10;
+
+
+TRANS next(v_content[1]) > 0 ? next(v_alive[1]) = TRUE : next(v_alive[1]) = FALSE;
+TRANS (v_alive[1] & v_content[1] - distance[loc][next(loc)] > 0)
+    ? (next(v_content[1]) = v_content[1] - distance[loc][next(loc)] + 
+        (next(loc) = 1 ? t_content - next(t_content) : 0)) 
+    : next(v_content[1]) = -1;
+
+
+TRANS (
+      distance[loc][0] >= 0 & next(loc) = 0
+    | distance[loc][1] >= 0 & next(loc) = 1
+     );
+
+TRANS next(v_alive[loc]) ? 
+    (next(loc) = 0 ? next(t_content) = 10 : next(t_content) <= t_content) 
+    : next(t_content) = t_content;
+
+
+TRANS v_alive[1] | next(v_alive[1]);
+
+
+CTLSPEC AF (
+      v_alive[1] = FALSE
+    );
+
+LTLSPEC G F (
+      v_alive[1] = FALSE
+    );

@@ -1,0 +1,4 @@
+reset
+read_model -i model.smv
+go
+check_fsm

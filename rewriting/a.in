@@ -1,0 +1,12 @@
+formulas(assumptions).
+R(a(x, x), x).
+R(a(x, y), a(y, x)).
+R(a(x,  a(y, z)), a(a(x, y), z)).
+R(x, y) -> R(a(x, z), a(y, z)).
+R(x, y) -> R(a(z, x), a(z, y)).
+RR(x, x).
+(RR(x, y) & R(y, z)) -> RR(x, z).
+end_of_list.
+formulas(goals).
+R(a(p, a(q, a(p, a(q, a(p,  a(q, p)))))), a(p, q)).
+end_of_list.

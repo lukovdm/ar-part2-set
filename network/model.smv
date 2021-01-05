@@ -1,0 +1,2042 @@
+MODULE main
+DEFINE
+    route := [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [0, 17, 17, 0, 3, 3, 3, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], [0, 26, 26, 26, 0, 4, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26], [0, 5, 5, 5, 5, 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [0, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [0, 19, 19, 19, 19, 19, 19, 0, 7, 7, 7, 19, 19, 19, 19, 19, 19, 19], [0, 27, 27, 27, 27, 27, 27, 27, 0, 8, 27, 27, 27, 27, 27, 27, 27, 27], [0, 9, 9, 9, 9, 9, 9, 9, 9, 0, 9, 9, 9, 9, 9, 9, 9, 9], [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 10, 10, 10, 10, 10, 10, 10], [0, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 0, 11, 11, 11, 21, 21, 21], [0, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 0, 12, 12, 12, 12, 12], [0, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 0, 13, 13, 13, 13], [0, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 0, 14, 14, 14], [0, 15, 15, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 0, 15, 23], [0, 16, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 0, 25], [0, 24, 24, 18, 18, 18, 18, 20, 20, 20, 20, 22, 22, 22, 22, 24, 24, 0]];
+VAR
+    contains : array 0..27 of {0,1,4,5};
+    step : {SEND, RECEIVE, PROCESS};
+    focus : 1..17;
+INIT contains[0] = 0;
+INIT contains[1] = 0;
+INIT contains[2] = 0;
+INIT contains[3] = 0;
+INIT contains[4] = 0;
+INIT contains[5] = 0;
+INIT contains[6] = 0;
+INIT contains[7] = 0;
+INIT contains[8] = 0;
+INIT contains[9] = 0;
+INIT contains[10] = 0;
+INIT contains[11] = 0;
+INIT contains[12] = 0;
+INIT contains[13] = 0;
+INIT contains[14] = 0;
+INIT contains[15] = 0;
+INIT contains[16] = 0;
+INIT contains[17] = 0;
+INIT contains[18] = 0;
+INIT contains[19] = 0;
+INIT contains[20] = 0;
+INIT contains[21] = 0;
+INIT contains[22] = 0;
+INIT contains[23] = 0;
+INIT contains[24] = 0;
+INIT contains[25] = 0;
+INIT contains[26] = 0;
+INIT contains[27] = 0;
+INVAR contains[0] = 0;
+-- FOCUS rules
+TRANS (next(step) = SEND -> (
+    (
+        next(focus) = 1 & (
+            contains[1] = 0
+            | contains[1] = 0
+            )
+    )
+    | (
+        next(focus) = 4 & (
+            contains[26] = 0
+            | contains[4] = 0
+            )
+    )
+    | (
+        next(focus) = 5 & (
+            contains[5] = 0
+            | contains[5] = 0
+            )
+    )
+    ));
+TRANS (next(step) = RECEIVE -> (
+    (
+        next(focus) = 1 & (
+            contains[16] = 1
+            )
+    )
+    | (
+        next(focus) = 4 & (
+            contains[3] = 4
+            )
+    )
+    | (
+        next(focus) = 5 & (
+            contains[4] = 5
+            )
+    )
+    ));
+-- SEND step
+TRANS (next(step) = SEND & next(focus) = 1 ->
+    (
+          contains[1] = 0
+        & next(contains[1]) = 4
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        & next(contains[5]) = contains[5]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    | (
+          contains[1] = 0
+        & next(contains[1]) = 5
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        & next(contains[5]) = contains[5]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    );
+TRANS (next(step) = SEND & next(focus) = 4 ->
+    (
+          contains[26] = 0
+        & next(contains[26]) = 1
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        & next(contains[5]) = contains[5]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[27]) = contains[27]
+        )
+    | (
+          contains[4] = 0
+        & next(contains[4]) = 5
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[5]) = contains[5]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    );
+TRANS (next(step) = SEND & next(focus) = 5 ->
+    (
+          contains[5] = 0
+        & next(contains[5]) = 1
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    | (
+          contains[5] = 0
+        & next(contains[5]) = 4
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    );
+
+-- RECEIVE step
+TRANS (next(step) = RECEIVE & next(focus) = 1 ->
+    (
+          contains[16] = 1
+        & next(contains[16]) = 0
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        & next(contains[5]) = contains[5]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    );
+TRANS (next(step) = RECEIVE & next(focus) = 4 ->
+    (
+          contains[3] = 4
+        & next(contains[3]) = 0
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[4]) = contains[4]
+        & next(contains[5]) = contains[5]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    );
+TRANS (next(step) = RECEIVE & next(focus) = 5 ->
+    (
+          contains[4] = 5
+        & next(contains[4]) = 0
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[5]) = contains[5]
+        & next(contains[6]) = contains[6]
+        & next(contains[7]) = contains[7]
+        & next(contains[8]) = contains[8]
+        & next(contains[9]) = contains[9]
+        & next(contains[10]) = contains[10]
+        & next(contains[11]) = contains[11]
+        & next(contains[12]) = contains[12]
+        & next(contains[13]) = contains[13]
+        & next(contains[14]) = contains[14]
+        & next(contains[15]) = contains[15]
+        & next(contains[16]) = contains[16]
+        & next(contains[17]) = contains[17]
+        & next(contains[18]) = contains[18]
+        & next(contains[19]) = contains[19]
+        & next(contains[20]) = contains[20]
+        & next(contains[21]) = contains[21]
+        & next(contains[22]) = contains[22]
+        & next(contains[23]) = contains[23]
+        & next(contains[24]) = contains[24]
+        & next(contains[25]) = contains[25]
+        & next(contains[26]) = contains[26]
+        & next(contains[27]) = contains[27]
+        )
+    );
+
+-- PROCESS step
+TRANS ((next(step) = PROCESS & next(focus) = 1) ->
+    (
+          contains[16] != 0
+        & contains[16] != 1
+        & contains[route[1][contains[16]]] = 0
+        & next(contains[16]) = 0
+        & (case
+            route[1][contains[16]] = 1 : next(contains[1]) = contains[16];
+            route[1][contains[16]] = 2 : next(contains[2]) = contains[16];
+            route[1][contains[16]] = 3 : next(contains[3]) = contains[16];
+            route[1][contains[16]] = 4 : next(contains[4]) = contains[16];
+            route[1][contains[16]] = 5 : next(contains[5]) = contains[16];
+            route[1][contains[16]] = 6 : next(contains[6]) = contains[16];
+            route[1][contains[16]] = 7 : next(contains[7]) = contains[16];
+            route[1][contains[16]] = 8 : next(contains[8]) = contains[16];
+            route[1][contains[16]] = 9 : next(contains[9]) = contains[16];
+            route[1][contains[16]] = 10 : next(contains[10]) = contains[16];
+            route[1][contains[16]] = 11 : next(contains[11]) = contains[16];
+            route[1][contains[16]] = 12 : next(contains[12]) = contains[16];
+            route[1][contains[16]] = 13 : next(contains[13]) = contains[16];
+            route[1][contains[16]] = 14 : next(contains[14]) = contains[16];
+            route[1][contains[16]] = 15 : next(contains[15]) = contains[16];
+            route[1][contains[16]] = 16 : next(contains[16]) = contains[16];
+            route[1][contains[16]] = 17 : next(contains[17]) = contains[16];
+            route[1][contains[16]] = 18 : next(contains[18]) = contains[16];
+            route[1][contains[16]] = 19 : next(contains[19]) = contains[16];
+            route[1][contains[16]] = 20 : next(contains[20]) = contains[16];
+            route[1][contains[16]] = 21 : next(contains[21]) = contains[16];
+            route[1][contains[16]] = 22 : next(contains[22]) = contains[16];
+            route[1][contains[16]] = 23 : next(contains[23]) = contains[16];
+            route[1][contains[16]] = 24 : next(contains[24]) = contains[16];
+            route[1][contains[16]] = 25 : next(contains[25]) = contains[16];
+            route[1][contains[16]] = 26 : next(contains[26]) = contains[16];
+            route[1][contains[16]] = 27 : next(contains[27]) = contains[16];
+            esac)
+        & (route[1][contains[16]] != 1 -> next(contains[1]) = contains[1])
+        & (route[1][contains[16]] != 2 -> next(contains[2]) = contains[2])
+        & (route[1][contains[16]] != 3 -> next(contains[3]) = contains[3])
+        & (route[1][contains[16]] != 4 -> next(contains[4]) = contains[4])
+        & (route[1][contains[16]] != 5 -> next(contains[5]) = contains[5])
+        & (route[1][contains[16]] != 6 -> next(contains[6]) = contains[6])
+        & (route[1][contains[16]] != 7 -> next(contains[7]) = contains[7])
+        & (route[1][contains[16]] != 8 -> next(contains[8]) = contains[8])
+        & (route[1][contains[16]] != 9 -> next(contains[9]) = contains[9])
+        & (route[1][contains[16]] != 10 -> next(contains[10]) = contains[10])
+        & (route[1][contains[16]] != 11 -> next(contains[11]) = contains[11])
+        & (route[1][contains[16]] != 12 -> next(contains[12]) = contains[12])
+        & (route[1][contains[16]] != 13 -> next(contains[13]) = contains[13])
+        & (route[1][contains[16]] != 14 -> next(contains[14]) = contains[14])
+        & (route[1][contains[16]] != 15 -> next(contains[15]) = contains[15])
+        & (route[1][contains[16]] != 17 -> next(contains[17]) = contains[17])
+        & (route[1][contains[16]] != 18 -> next(contains[18]) = contains[18])
+        & (route[1][contains[16]] != 19 -> next(contains[19]) = contains[19])
+        & (route[1][contains[16]] != 20 -> next(contains[20]) = contains[20])
+        & (route[1][contains[16]] != 21 -> next(contains[21]) = contains[21])
+        & (route[1][contains[16]] != 22 -> next(contains[22]) = contains[22])
+        & (route[1][contains[16]] != 23 -> next(contains[23]) = contains[23])
+        & (route[1][contains[16]] != 24 -> next(contains[24]) = contains[24])
+        & (route[1][contains[16]] != 25 -> next(contains[25]) = contains[25])
+        & (route[1][contains[16]] != 26 -> next(contains[26]) = contains[26])
+        & (route[1][contains[16]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 2) ->
+    (
+          contains[1] != 0
+        & contains[1] != 2
+        & contains[route[2][contains[1]]] = 0
+        & next(contains[1]) = 0
+        & (case
+            route[2][contains[1]] = 1 : next(contains[1]) = contains[1];
+            route[2][contains[1]] = 2 : next(contains[2]) = contains[1];
+            route[2][contains[1]] = 3 : next(contains[3]) = contains[1];
+            route[2][contains[1]] = 4 : next(contains[4]) = contains[1];
+            route[2][contains[1]] = 5 : next(contains[5]) = contains[1];
+            route[2][contains[1]] = 6 : next(contains[6]) = contains[1];
+            route[2][contains[1]] = 7 : next(contains[7]) = contains[1];
+            route[2][contains[1]] = 8 : next(contains[8]) = contains[1];
+            route[2][contains[1]] = 9 : next(contains[9]) = contains[1];
+            route[2][contains[1]] = 10 : next(contains[10]) = contains[1];
+            route[2][contains[1]] = 11 : next(contains[11]) = contains[1];
+            route[2][contains[1]] = 12 : next(contains[12]) = contains[1];
+            route[2][contains[1]] = 13 : next(contains[13]) = contains[1];
+            route[2][contains[1]] = 14 : next(contains[14]) = contains[1];
+            route[2][contains[1]] = 15 : next(contains[15]) = contains[1];
+            route[2][contains[1]] = 16 : next(contains[16]) = contains[1];
+            route[2][contains[1]] = 17 : next(contains[17]) = contains[1];
+            route[2][contains[1]] = 18 : next(contains[18]) = contains[1];
+            route[2][contains[1]] = 19 : next(contains[19]) = contains[1];
+            route[2][contains[1]] = 20 : next(contains[20]) = contains[1];
+            route[2][contains[1]] = 21 : next(contains[21]) = contains[1];
+            route[2][contains[1]] = 22 : next(contains[22]) = contains[1];
+            route[2][contains[1]] = 23 : next(contains[23]) = contains[1];
+            route[2][contains[1]] = 24 : next(contains[24]) = contains[1];
+            route[2][contains[1]] = 25 : next(contains[25]) = contains[1];
+            route[2][contains[1]] = 26 : next(contains[26]) = contains[1];
+            route[2][contains[1]] = 27 : next(contains[27]) = contains[1];
+            esac)
+        & (route[2][contains[1]] != 2 -> next(contains[2]) = contains[2])
+        & (route[2][contains[1]] != 3 -> next(contains[3]) = contains[3])
+        & (route[2][contains[1]] != 4 -> next(contains[4]) = contains[4])
+        & (route[2][contains[1]] != 5 -> next(contains[5]) = contains[5])
+        & (route[2][contains[1]] != 6 -> next(contains[6]) = contains[6])
+        & (route[2][contains[1]] != 7 -> next(contains[7]) = contains[7])
+        & (route[2][contains[1]] != 8 -> next(contains[8]) = contains[8])
+        & (route[2][contains[1]] != 9 -> next(contains[9]) = contains[9])
+        & (route[2][contains[1]] != 10 -> next(contains[10]) = contains[10])
+        & (route[2][contains[1]] != 11 -> next(contains[11]) = contains[11])
+        & (route[2][contains[1]] != 12 -> next(contains[12]) = contains[12])
+        & (route[2][contains[1]] != 13 -> next(contains[13]) = contains[13])
+        & (route[2][contains[1]] != 14 -> next(contains[14]) = contains[14])
+        & (route[2][contains[1]] != 15 -> next(contains[15]) = contains[15])
+        & (route[2][contains[1]] != 16 -> next(contains[16]) = contains[16])
+        & (route[2][contains[1]] != 17 -> next(contains[17]) = contains[17])
+        & (route[2][contains[1]] != 18 -> next(contains[18]) = contains[18])
+        & (route[2][contains[1]] != 19 -> next(contains[19]) = contains[19])
+        & (route[2][contains[1]] != 20 -> next(contains[20]) = contains[20])
+        & (route[2][contains[1]] != 21 -> next(contains[21]) = contains[21])
+        & (route[2][contains[1]] != 22 -> next(contains[22]) = contains[22])
+        & (route[2][contains[1]] != 23 -> next(contains[23]) = contains[23])
+        & (route[2][contains[1]] != 24 -> next(contains[24]) = contains[24])
+        & (route[2][contains[1]] != 25 -> next(contains[25]) = contains[25])
+        & (route[2][contains[1]] != 26 -> next(contains[26]) = contains[26])
+        & (route[2][contains[1]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[25] != 0
+        & contains[25] != 2
+        & contains[route[2][contains[25]]] = 0
+        & next(contains[25]) = 0
+        & (case
+            route[2][contains[25]] = 1 : next(contains[1]) = contains[25];
+            route[2][contains[25]] = 2 : next(contains[2]) = contains[25];
+            route[2][contains[25]] = 3 : next(contains[3]) = contains[25];
+            route[2][contains[25]] = 4 : next(contains[4]) = contains[25];
+            route[2][contains[25]] = 5 : next(contains[5]) = contains[25];
+            route[2][contains[25]] = 6 : next(contains[6]) = contains[25];
+            route[2][contains[25]] = 7 : next(contains[7]) = contains[25];
+            route[2][contains[25]] = 8 : next(contains[8]) = contains[25];
+            route[2][contains[25]] = 9 : next(contains[9]) = contains[25];
+            route[2][contains[25]] = 10 : next(contains[10]) = contains[25];
+            route[2][contains[25]] = 11 : next(contains[11]) = contains[25];
+            route[2][contains[25]] = 12 : next(contains[12]) = contains[25];
+            route[2][contains[25]] = 13 : next(contains[13]) = contains[25];
+            route[2][contains[25]] = 14 : next(contains[14]) = contains[25];
+            route[2][contains[25]] = 15 : next(contains[15]) = contains[25];
+            route[2][contains[25]] = 16 : next(contains[16]) = contains[25];
+            route[2][contains[25]] = 17 : next(contains[17]) = contains[25];
+            route[2][contains[25]] = 18 : next(contains[18]) = contains[25];
+            route[2][contains[25]] = 19 : next(contains[19]) = contains[25];
+            route[2][contains[25]] = 20 : next(contains[20]) = contains[25];
+            route[2][contains[25]] = 21 : next(contains[21]) = contains[25];
+            route[2][contains[25]] = 22 : next(contains[22]) = contains[25];
+            route[2][contains[25]] = 23 : next(contains[23]) = contains[25];
+            route[2][contains[25]] = 24 : next(contains[24]) = contains[25];
+            route[2][contains[25]] = 25 : next(contains[25]) = contains[25];
+            route[2][contains[25]] = 26 : next(contains[26]) = contains[25];
+            route[2][contains[25]] = 27 : next(contains[27]) = contains[25];
+            esac)
+        & (route[2][contains[25]] != 1 -> next(contains[1]) = contains[1])
+        & (route[2][contains[25]] != 2 -> next(contains[2]) = contains[2])
+        & (route[2][contains[25]] != 3 -> next(contains[3]) = contains[3])
+        & (route[2][contains[25]] != 4 -> next(contains[4]) = contains[4])
+        & (route[2][contains[25]] != 5 -> next(contains[5]) = contains[5])
+        & (route[2][contains[25]] != 6 -> next(contains[6]) = contains[6])
+        & (route[2][contains[25]] != 7 -> next(contains[7]) = contains[7])
+        & (route[2][contains[25]] != 8 -> next(contains[8]) = contains[8])
+        & (route[2][contains[25]] != 9 -> next(contains[9]) = contains[9])
+        & (route[2][contains[25]] != 10 -> next(contains[10]) = contains[10])
+        & (route[2][contains[25]] != 11 -> next(contains[11]) = contains[11])
+        & (route[2][contains[25]] != 12 -> next(contains[12]) = contains[12])
+        & (route[2][contains[25]] != 13 -> next(contains[13]) = contains[13])
+        & (route[2][contains[25]] != 14 -> next(contains[14]) = contains[14])
+        & (route[2][contains[25]] != 15 -> next(contains[15]) = contains[15])
+        & (route[2][contains[25]] != 16 -> next(contains[16]) = contains[16])
+        & (route[2][contains[25]] != 17 -> next(contains[17]) = contains[17])
+        & (route[2][contains[25]] != 18 -> next(contains[18]) = contains[18])
+        & (route[2][contains[25]] != 19 -> next(contains[19]) = contains[19])
+        & (route[2][contains[25]] != 20 -> next(contains[20]) = contains[20])
+        & (route[2][contains[25]] != 21 -> next(contains[21]) = contains[21])
+        & (route[2][contains[25]] != 22 -> next(contains[22]) = contains[22])
+        & (route[2][contains[25]] != 23 -> next(contains[23]) = contains[23])
+        & (route[2][contains[25]] != 24 -> next(contains[24]) = contains[24])
+        & (route[2][contains[25]] != 26 -> next(contains[26]) = contains[26])
+        & (route[2][contains[25]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 3) ->
+    (
+          contains[2] != 0
+        & contains[2] != 3
+        & contains[route[3][contains[2]]] = 0
+        & next(contains[2]) = 0
+        & (case
+            route[3][contains[2]] = 1 : next(contains[1]) = contains[2];
+            route[3][contains[2]] = 2 : next(contains[2]) = contains[2];
+            route[3][contains[2]] = 3 : next(contains[3]) = contains[2];
+            route[3][contains[2]] = 4 : next(contains[4]) = contains[2];
+            route[3][contains[2]] = 5 : next(contains[5]) = contains[2];
+            route[3][contains[2]] = 6 : next(contains[6]) = contains[2];
+            route[3][contains[2]] = 7 : next(contains[7]) = contains[2];
+            route[3][contains[2]] = 8 : next(contains[8]) = contains[2];
+            route[3][contains[2]] = 9 : next(contains[9]) = contains[2];
+            route[3][contains[2]] = 10 : next(contains[10]) = contains[2];
+            route[3][contains[2]] = 11 : next(contains[11]) = contains[2];
+            route[3][contains[2]] = 12 : next(contains[12]) = contains[2];
+            route[3][contains[2]] = 13 : next(contains[13]) = contains[2];
+            route[3][contains[2]] = 14 : next(contains[14]) = contains[2];
+            route[3][contains[2]] = 15 : next(contains[15]) = contains[2];
+            route[3][contains[2]] = 16 : next(contains[16]) = contains[2];
+            route[3][contains[2]] = 17 : next(contains[17]) = contains[2];
+            route[3][contains[2]] = 18 : next(contains[18]) = contains[2];
+            route[3][contains[2]] = 19 : next(contains[19]) = contains[2];
+            route[3][contains[2]] = 20 : next(contains[20]) = contains[2];
+            route[3][contains[2]] = 21 : next(contains[21]) = contains[2];
+            route[3][contains[2]] = 22 : next(contains[22]) = contains[2];
+            route[3][contains[2]] = 23 : next(contains[23]) = contains[2];
+            route[3][contains[2]] = 24 : next(contains[24]) = contains[2];
+            route[3][contains[2]] = 25 : next(contains[25]) = contains[2];
+            route[3][contains[2]] = 26 : next(contains[26]) = contains[2];
+            route[3][contains[2]] = 27 : next(contains[27]) = contains[2];
+            esac)
+        & (route[3][contains[2]] != 1 -> next(contains[1]) = contains[1])
+        & (route[3][contains[2]] != 3 -> next(contains[3]) = contains[3])
+        & (route[3][contains[2]] != 4 -> next(contains[4]) = contains[4])
+        & (route[3][contains[2]] != 5 -> next(contains[5]) = contains[5])
+        & (route[3][contains[2]] != 6 -> next(contains[6]) = contains[6])
+        & (route[3][contains[2]] != 7 -> next(contains[7]) = contains[7])
+        & (route[3][contains[2]] != 8 -> next(contains[8]) = contains[8])
+        & (route[3][contains[2]] != 9 -> next(contains[9]) = contains[9])
+        & (route[3][contains[2]] != 10 -> next(contains[10]) = contains[10])
+        & (route[3][contains[2]] != 11 -> next(contains[11]) = contains[11])
+        & (route[3][contains[2]] != 12 -> next(contains[12]) = contains[12])
+        & (route[3][contains[2]] != 13 -> next(contains[13]) = contains[13])
+        & (route[3][contains[2]] != 14 -> next(contains[14]) = contains[14])
+        & (route[3][contains[2]] != 15 -> next(contains[15]) = contains[15])
+        & (route[3][contains[2]] != 16 -> next(contains[16]) = contains[16])
+        & (route[3][contains[2]] != 17 -> next(contains[17]) = contains[17])
+        & (route[3][contains[2]] != 18 -> next(contains[18]) = contains[18])
+        & (route[3][contains[2]] != 19 -> next(contains[19]) = contains[19])
+        & (route[3][contains[2]] != 20 -> next(contains[20]) = contains[20])
+        & (route[3][contains[2]] != 21 -> next(contains[21]) = contains[21])
+        & (route[3][contains[2]] != 22 -> next(contains[22]) = contains[22])
+        & (route[3][contains[2]] != 23 -> next(contains[23]) = contains[23])
+        & (route[3][contains[2]] != 24 -> next(contains[24]) = contains[24])
+        & (route[3][contains[2]] != 25 -> next(contains[25]) = contains[25])
+        & (route[3][contains[2]] != 26 -> next(contains[26]) = contains[26])
+        & (route[3][contains[2]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[18] != 0
+        & contains[18] != 3
+        & contains[route[3][contains[18]]] = 0
+        & next(contains[18]) = 0
+        & (case
+            route[3][contains[18]] = 1 : next(contains[1]) = contains[18];
+            route[3][contains[18]] = 2 : next(contains[2]) = contains[18];
+            route[3][contains[18]] = 3 : next(contains[3]) = contains[18];
+            route[3][contains[18]] = 4 : next(contains[4]) = contains[18];
+            route[3][contains[18]] = 5 : next(contains[5]) = contains[18];
+            route[3][contains[18]] = 6 : next(contains[6]) = contains[18];
+            route[3][contains[18]] = 7 : next(contains[7]) = contains[18];
+            route[3][contains[18]] = 8 : next(contains[8]) = contains[18];
+            route[3][contains[18]] = 9 : next(contains[9]) = contains[18];
+            route[3][contains[18]] = 10 : next(contains[10]) = contains[18];
+            route[3][contains[18]] = 11 : next(contains[11]) = contains[18];
+            route[3][contains[18]] = 12 : next(contains[12]) = contains[18];
+            route[3][contains[18]] = 13 : next(contains[13]) = contains[18];
+            route[3][contains[18]] = 14 : next(contains[14]) = contains[18];
+            route[3][contains[18]] = 15 : next(contains[15]) = contains[18];
+            route[3][contains[18]] = 16 : next(contains[16]) = contains[18];
+            route[3][contains[18]] = 17 : next(contains[17]) = contains[18];
+            route[3][contains[18]] = 18 : next(contains[18]) = contains[18];
+            route[3][contains[18]] = 19 : next(contains[19]) = contains[18];
+            route[3][contains[18]] = 20 : next(contains[20]) = contains[18];
+            route[3][contains[18]] = 21 : next(contains[21]) = contains[18];
+            route[3][contains[18]] = 22 : next(contains[22]) = contains[18];
+            route[3][contains[18]] = 23 : next(contains[23]) = contains[18];
+            route[3][contains[18]] = 24 : next(contains[24]) = contains[18];
+            route[3][contains[18]] = 25 : next(contains[25]) = contains[18];
+            route[3][contains[18]] = 26 : next(contains[26]) = contains[18];
+            route[3][contains[18]] = 27 : next(contains[27]) = contains[18];
+            esac)
+        & (route[3][contains[18]] != 1 -> next(contains[1]) = contains[1])
+        & (route[3][contains[18]] != 2 -> next(contains[2]) = contains[2])
+        & (route[3][contains[18]] != 3 -> next(contains[3]) = contains[3])
+        & (route[3][contains[18]] != 4 -> next(contains[4]) = contains[4])
+        & (route[3][contains[18]] != 5 -> next(contains[5]) = contains[5])
+        & (route[3][contains[18]] != 6 -> next(contains[6]) = contains[6])
+        & (route[3][contains[18]] != 7 -> next(contains[7]) = contains[7])
+        & (route[3][contains[18]] != 8 -> next(contains[8]) = contains[8])
+        & (route[3][contains[18]] != 9 -> next(contains[9]) = contains[9])
+        & (route[3][contains[18]] != 10 -> next(contains[10]) = contains[10])
+        & (route[3][contains[18]] != 11 -> next(contains[11]) = contains[11])
+        & (route[3][contains[18]] != 12 -> next(contains[12]) = contains[12])
+        & (route[3][contains[18]] != 13 -> next(contains[13]) = contains[13])
+        & (route[3][contains[18]] != 14 -> next(contains[14]) = contains[14])
+        & (route[3][contains[18]] != 15 -> next(contains[15]) = contains[15])
+        & (route[3][contains[18]] != 16 -> next(contains[16]) = contains[16])
+        & (route[3][contains[18]] != 17 -> next(contains[17]) = contains[17])
+        & (route[3][contains[18]] != 19 -> next(contains[19]) = contains[19])
+        & (route[3][contains[18]] != 20 -> next(contains[20]) = contains[20])
+        & (route[3][contains[18]] != 21 -> next(contains[21]) = contains[21])
+        & (route[3][contains[18]] != 22 -> next(contains[22]) = contains[22])
+        & (route[3][contains[18]] != 23 -> next(contains[23]) = contains[23])
+        & (route[3][contains[18]] != 24 -> next(contains[24]) = contains[24])
+        & (route[3][contains[18]] != 25 -> next(contains[25]) = contains[25])
+        & (route[3][contains[18]] != 26 -> next(contains[26]) = contains[26])
+        & (route[3][contains[18]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 4) ->
+    (
+          contains[3] != 0
+        & contains[3] != 4
+        & contains[route[4][contains[3]]] = 0
+        & next(contains[3]) = 0
+        & (case
+            route[4][contains[3]] = 1 : next(contains[1]) = contains[3];
+            route[4][contains[3]] = 2 : next(contains[2]) = contains[3];
+            route[4][contains[3]] = 3 : next(contains[3]) = contains[3];
+            route[4][contains[3]] = 4 : next(contains[4]) = contains[3];
+            route[4][contains[3]] = 5 : next(contains[5]) = contains[3];
+            route[4][contains[3]] = 6 : next(contains[6]) = contains[3];
+            route[4][contains[3]] = 7 : next(contains[7]) = contains[3];
+            route[4][contains[3]] = 8 : next(contains[8]) = contains[3];
+            route[4][contains[3]] = 9 : next(contains[9]) = contains[3];
+            route[4][contains[3]] = 10 : next(contains[10]) = contains[3];
+            route[4][contains[3]] = 11 : next(contains[11]) = contains[3];
+            route[4][contains[3]] = 12 : next(contains[12]) = contains[3];
+            route[4][contains[3]] = 13 : next(contains[13]) = contains[3];
+            route[4][contains[3]] = 14 : next(contains[14]) = contains[3];
+            route[4][contains[3]] = 15 : next(contains[15]) = contains[3];
+            route[4][contains[3]] = 16 : next(contains[16]) = contains[3];
+            route[4][contains[3]] = 17 : next(contains[17]) = contains[3];
+            route[4][contains[3]] = 18 : next(contains[18]) = contains[3];
+            route[4][contains[3]] = 19 : next(contains[19]) = contains[3];
+            route[4][contains[3]] = 20 : next(contains[20]) = contains[3];
+            route[4][contains[3]] = 21 : next(contains[21]) = contains[3];
+            route[4][contains[3]] = 22 : next(contains[22]) = contains[3];
+            route[4][contains[3]] = 23 : next(contains[23]) = contains[3];
+            route[4][contains[3]] = 24 : next(contains[24]) = contains[3];
+            route[4][contains[3]] = 25 : next(contains[25]) = contains[3];
+            route[4][contains[3]] = 26 : next(contains[26]) = contains[3];
+            route[4][contains[3]] = 27 : next(contains[27]) = contains[3];
+            esac)
+        & (route[4][contains[3]] != 1 -> next(contains[1]) = contains[1])
+        & (route[4][contains[3]] != 2 -> next(contains[2]) = contains[2])
+        & (route[4][contains[3]] != 4 -> next(contains[4]) = contains[4])
+        & (route[4][contains[3]] != 5 -> next(contains[5]) = contains[5])
+        & (route[4][contains[3]] != 6 -> next(contains[6]) = contains[6])
+        & (route[4][contains[3]] != 7 -> next(contains[7]) = contains[7])
+        & (route[4][contains[3]] != 8 -> next(contains[8]) = contains[8])
+        & (route[4][contains[3]] != 9 -> next(contains[9]) = contains[9])
+        & (route[4][contains[3]] != 10 -> next(contains[10]) = contains[10])
+        & (route[4][contains[3]] != 11 -> next(contains[11]) = contains[11])
+        & (route[4][contains[3]] != 12 -> next(contains[12]) = contains[12])
+        & (route[4][contains[3]] != 13 -> next(contains[13]) = contains[13])
+        & (route[4][contains[3]] != 14 -> next(contains[14]) = contains[14])
+        & (route[4][contains[3]] != 15 -> next(contains[15]) = contains[15])
+        & (route[4][contains[3]] != 16 -> next(contains[16]) = contains[16])
+        & (route[4][contains[3]] != 17 -> next(contains[17]) = contains[17])
+        & (route[4][contains[3]] != 18 -> next(contains[18]) = contains[18])
+        & (route[4][contains[3]] != 19 -> next(contains[19]) = contains[19])
+        & (route[4][contains[3]] != 20 -> next(contains[20]) = contains[20])
+        & (route[4][contains[3]] != 21 -> next(contains[21]) = contains[21])
+        & (route[4][contains[3]] != 22 -> next(contains[22]) = contains[22])
+        & (route[4][contains[3]] != 23 -> next(contains[23]) = contains[23])
+        & (route[4][contains[3]] != 24 -> next(contains[24]) = contains[24])
+        & (route[4][contains[3]] != 25 -> next(contains[25]) = contains[25])
+        & (route[4][contains[3]] != 26 -> next(contains[26]) = contains[26])
+        & (route[4][contains[3]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 5) ->
+    (
+          contains[4] != 0
+        & contains[4] != 5
+        & contains[route[5][contains[4]]] = 0
+        & next(contains[4]) = 0
+        & (case
+            route[5][contains[4]] = 1 : next(contains[1]) = contains[4];
+            route[5][contains[4]] = 2 : next(contains[2]) = contains[4];
+            route[5][contains[4]] = 3 : next(contains[3]) = contains[4];
+            route[5][contains[4]] = 4 : next(contains[4]) = contains[4];
+            route[5][contains[4]] = 5 : next(contains[5]) = contains[4];
+            route[5][contains[4]] = 6 : next(contains[6]) = contains[4];
+            route[5][contains[4]] = 7 : next(contains[7]) = contains[4];
+            route[5][contains[4]] = 8 : next(contains[8]) = contains[4];
+            route[5][contains[4]] = 9 : next(contains[9]) = contains[4];
+            route[5][contains[4]] = 10 : next(contains[10]) = contains[4];
+            route[5][contains[4]] = 11 : next(contains[11]) = contains[4];
+            route[5][contains[4]] = 12 : next(contains[12]) = contains[4];
+            route[5][contains[4]] = 13 : next(contains[13]) = contains[4];
+            route[5][contains[4]] = 14 : next(contains[14]) = contains[4];
+            route[5][contains[4]] = 15 : next(contains[15]) = contains[4];
+            route[5][contains[4]] = 16 : next(contains[16]) = contains[4];
+            route[5][contains[4]] = 17 : next(contains[17]) = contains[4];
+            route[5][contains[4]] = 18 : next(contains[18]) = contains[4];
+            route[5][contains[4]] = 19 : next(contains[19]) = contains[4];
+            route[5][contains[4]] = 20 : next(contains[20]) = contains[4];
+            route[5][contains[4]] = 21 : next(contains[21]) = contains[4];
+            route[5][contains[4]] = 22 : next(contains[22]) = contains[4];
+            route[5][contains[4]] = 23 : next(contains[23]) = contains[4];
+            route[5][contains[4]] = 24 : next(contains[24]) = contains[4];
+            route[5][contains[4]] = 25 : next(contains[25]) = contains[4];
+            route[5][contains[4]] = 26 : next(contains[26]) = contains[4];
+            route[5][contains[4]] = 27 : next(contains[27]) = contains[4];
+            esac)
+        & (route[5][contains[4]] != 1 -> next(contains[1]) = contains[1])
+        & (route[5][contains[4]] != 2 -> next(contains[2]) = contains[2])
+        & (route[5][contains[4]] != 3 -> next(contains[3]) = contains[3])
+        & (route[5][contains[4]] != 5 -> next(contains[5]) = contains[5])
+        & (route[5][contains[4]] != 6 -> next(contains[6]) = contains[6])
+        & (route[5][contains[4]] != 7 -> next(contains[7]) = contains[7])
+        & (route[5][contains[4]] != 8 -> next(contains[8]) = contains[8])
+        & (route[5][contains[4]] != 9 -> next(contains[9]) = contains[9])
+        & (route[5][contains[4]] != 10 -> next(contains[10]) = contains[10])
+        & (route[5][contains[4]] != 11 -> next(contains[11]) = contains[11])
+        & (route[5][contains[4]] != 12 -> next(contains[12]) = contains[12])
+        & (route[5][contains[4]] != 13 -> next(contains[13]) = contains[13])
+        & (route[5][contains[4]] != 14 -> next(contains[14]) = contains[14])
+        & (route[5][contains[4]] != 15 -> next(contains[15]) = contains[15])
+        & (route[5][contains[4]] != 16 -> next(contains[16]) = contains[16])
+        & (route[5][contains[4]] != 17 -> next(contains[17]) = contains[17])
+        & (route[5][contains[4]] != 18 -> next(contains[18]) = contains[18])
+        & (route[5][contains[4]] != 19 -> next(contains[19]) = contains[19])
+        & (route[5][contains[4]] != 20 -> next(contains[20]) = contains[20])
+        & (route[5][contains[4]] != 21 -> next(contains[21]) = contains[21])
+        & (route[5][contains[4]] != 22 -> next(contains[22]) = contains[22])
+        & (route[5][contains[4]] != 23 -> next(contains[23]) = contains[23])
+        & (route[5][contains[4]] != 24 -> next(contains[24]) = contains[24])
+        & (route[5][contains[4]] != 25 -> next(contains[25]) = contains[25])
+        & (route[5][contains[4]] != 26 -> next(contains[26]) = contains[26])
+        & (route[5][contains[4]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 6) ->
+    (
+          contains[5] != 0
+        & contains[5] != 6
+        & contains[route[6][contains[5]]] = 0
+        & next(contains[5]) = 0
+        & (case
+            route[6][contains[5]] = 1 : next(contains[1]) = contains[5];
+            route[6][contains[5]] = 2 : next(contains[2]) = contains[5];
+            route[6][contains[5]] = 3 : next(contains[3]) = contains[5];
+            route[6][contains[5]] = 4 : next(contains[4]) = contains[5];
+            route[6][contains[5]] = 5 : next(contains[5]) = contains[5];
+            route[6][contains[5]] = 6 : next(contains[6]) = contains[5];
+            route[6][contains[5]] = 7 : next(contains[7]) = contains[5];
+            route[6][contains[5]] = 8 : next(contains[8]) = contains[5];
+            route[6][contains[5]] = 9 : next(contains[9]) = contains[5];
+            route[6][contains[5]] = 10 : next(contains[10]) = contains[5];
+            route[6][contains[5]] = 11 : next(contains[11]) = contains[5];
+            route[6][contains[5]] = 12 : next(contains[12]) = contains[5];
+            route[6][contains[5]] = 13 : next(contains[13]) = contains[5];
+            route[6][contains[5]] = 14 : next(contains[14]) = contains[5];
+            route[6][contains[5]] = 15 : next(contains[15]) = contains[5];
+            route[6][contains[5]] = 16 : next(contains[16]) = contains[5];
+            route[6][contains[5]] = 17 : next(contains[17]) = contains[5];
+            route[6][contains[5]] = 18 : next(contains[18]) = contains[5];
+            route[6][contains[5]] = 19 : next(contains[19]) = contains[5];
+            route[6][contains[5]] = 20 : next(contains[20]) = contains[5];
+            route[6][contains[5]] = 21 : next(contains[21]) = contains[5];
+            route[6][contains[5]] = 22 : next(contains[22]) = contains[5];
+            route[6][contains[5]] = 23 : next(contains[23]) = contains[5];
+            route[6][contains[5]] = 24 : next(contains[24]) = contains[5];
+            route[6][contains[5]] = 25 : next(contains[25]) = contains[5];
+            route[6][contains[5]] = 26 : next(contains[26]) = contains[5];
+            route[6][contains[5]] = 27 : next(contains[27]) = contains[5];
+            esac)
+        & (route[6][contains[5]] != 1 -> next(contains[1]) = contains[1])
+        & (route[6][contains[5]] != 2 -> next(contains[2]) = contains[2])
+        & (route[6][contains[5]] != 3 -> next(contains[3]) = contains[3])
+        & (route[6][contains[5]] != 4 -> next(contains[4]) = contains[4])
+        & (route[6][contains[5]] != 6 -> next(contains[6]) = contains[6])
+        & (route[6][contains[5]] != 7 -> next(contains[7]) = contains[7])
+        & (route[6][contains[5]] != 8 -> next(contains[8]) = contains[8])
+        & (route[6][contains[5]] != 9 -> next(contains[9]) = contains[9])
+        & (route[6][contains[5]] != 10 -> next(contains[10]) = contains[10])
+        & (route[6][contains[5]] != 11 -> next(contains[11]) = contains[11])
+        & (route[6][contains[5]] != 12 -> next(contains[12]) = contains[12])
+        & (route[6][contains[5]] != 13 -> next(contains[13]) = contains[13])
+        & (route[6][contains[5]] != 14 -> next(contains[14]) = contains[14])
+        & (route[6][contains[5]] != 15 -> next(contains[15]) = contains[15])
+        & (route[6][contains[5]] != 16 -> next(contains[16]) = contains[16])
+        & (route[6][contains[5]] != 17 -> next(contains[17]) = contains[17])
+        & (route[6][contains[5]] != 18 -> next(contains[18]) = contains[18])
+        & (route[6][contains[5]] != 19 -> next(contains[19]) = contains[19])
+        & (route[6][contains[5]] != 20 -> next(contains[20]) = contains[20])
+        & (route[6][contains[5]] != 21 -> next(contains[21]) = contains[21])
+        & (route[6][contains[5]] != 22 -> next(contains[22]) = contains[22])
+        & (route[6][contains[5]] != 23 -> next(contains[23]) = contains[23])
+        & (route[6][contains[5]] != 24 -> next(contains[24]) = contains[24])
+        & (route[6][contains[5]] != 25 -> next(contains[25]) = contains[25])
+        & (route[6][contains[5]] != 26 -> next(contains[26]) = contains[26])
+        & (route[6][contains[5]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[26] != 0
+        & contains[26] != 6
+        & contains[route[6][contains[26]]] = 0
+        & next(contains[26]) = 0
+        & (case
+            route[6][contains[26]] = 1 : next(contains[1]) = contains[26];
+            route[6][contains[26]] = 2 : next(contains[2]) = contains[26];
+            route[6][contains[26]] = 3 : next(contains[3]) = contains[26];
+            route[6][contains[26]] = 4 : next(contains[4]) = contains[26];
+            route[6][contains[26]] = 5 : next(contains[5]) = contains[26];
+            route[6][contains[26]] = 6 : next(contains[6]) = contains[26];
+            route[6][contains[26]] = 7 : next(contains[7]) = contains[26];
+            route[6][contains[26]] = 8 : next(contains[8]) = contains[26];
+            route[6][contains[26]] = 9 : next(contains[9]) = contains[26];
+            route[6][contains[26]] = 10 : next(contains[10]) = contains[26];
+            route[6][contains[26]] = 11 : next(contains[11]) = contains[26];
+            route[6][contains[26]] = 12 : next(contains[12]) = contains[26];
+            route[6][contains[26]] = 13 : next(contains[13]) = contains[26];
+            route[6][contains[26]] = 14 : next(contains[14]) = contains[26];
+            route[6][contains[26]] = 15 : next(contains[15]) = contains[26];
+            route[6][contains[26]] = 16 : next(contains[16]) = contains[26];
+            route[6][contains[26]] = 17 : next(contains[17]) = contains[26];
+            route[6][contains[26]] = 18 : next(contains[18]) = contains[26];
+            route[6][contains[26]] = 19 : next(contains[19]) = contains[26];
+            route[6][contains[26]] = 20 : next(contains[20]) = contains[26];
+            route[6][contains[26]] = 21 : next(contains[21]) = contains[26];
+            route[6][contains[26]] = 22 : next(contains[22]) = contains[26];
+            route[6][contains[26]] = 23 : next(contains[23]) = contains[26];
+            route[6][contains[26]] = 24 : next(contains[24]) = contains[26];
+            route[6][contains[26]] = 25 : next(contains[25]) = contains[26];
+            route[6][contains[26]] = 26 : next(contains[26]) = contains[26];
+            route[6][contains[26]] = 27 : next(contains[27]) = contains[26];
+            esac)
+        & (route[6][contains[26]] != 1 -> next(contains[1]) = contains[1])
+        & (route[6][contains[26]] != 2 -> next(contains[2]) = contains[2])
+        & (route[6][contains[26]] != 3 -> next(contains[3]) = contains[3])
+        & (route[6][contains[26]] != 4 -> next(contains[4]) = contains[4])
+        & (route[6][contains[26]] != 5 -> next(contains[5]) = contains[5])
+        & (route[6][contains[26]] != 6 -> next(contains[6]) = contains[6])
+        & (route[6][contains[26]] != 7 -> next(contains[7]) = contains[7])
+        & (route[6][contains[26]] != 8 -> next(contains[8]) = contains[8])
+        & (route[6][contains[26]] != 9 -> next(contains[9]) = contains[9])
+        & (route[6][contains[26]] != 10 -> next(contains[10]) = contains[10])
+        & (route[6][contains[26]] != 11 -> next(contains[11]) = contains[11])
+        & (route[6][contains[26]] != 12 -> next(contains[12]) = contains[12])
+        & (route[6][contains[26]] != 13 -> next(contains[13]) = contains[13])
+        & (route[6][contains[26]] != 14 -> next(contains[14]) = contains[14])
+        & (route[6][contains[26]] != 15 -> next(contains[15]) = contains[15])
+        & (route[6][contains[26]] != 16 -> next(contains[16]) = contains[16])
+        & (route[6][contains[26]] != 17 -> next(contains[17]) = contains[17])
+        & (route[6][contains[26]] != 18 -> next(contains[18]) = contains[18])
+        & (route[6][contains[26]] != 19 -> next(contains[19]) = contains[19])
+        & (route[6][contains[26]] != 20 -> next(contains[20]) = contains[20])
+        & (route[6][contains[26]] != 21 -> next(contains[21]) = contains[21])
+        & (route[6][contains[26]] != 22 -> next(contains[22]) = contains[22])
+        & (route[6][contains[26]] != 23 -> next(contains[23]) = contains[23])
+        & (route[6][contains[26]] != 24 -> next(contains[24]) = contains[24])
+        & (route[6][contains[26]] != 25 -> next(contains[25]) = contains[25])
+        & (route[6][contains[26]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 7) ->
+    (
+          contains[6] != 0
+        & contains[6] != 7
+        & contains[route[7][contains[6]]] = 0
+        & next(contains[6]) = 0
+        & (case
+            route[7][contains[6]] = 1 : next(contains[1]) = contains[6];
+            route[7][contains[6]] = 2 : next(contains[2]) = contains[6];
+            route[7][contains[6]] = 3 : next(contains[3]) = contains[6];
+            route[7][contains[6]] = 4 : next(contains[4]) = contains[6];
+            route[7][contains[6]] = 5 : next(contains[5]) = contains[6];
+            route[7][contains[6]] = 6 : next(contains[6]) = contains[6];
+            route[7][contains[6]] = 7 : next(contains[7]) = contains[6];
+            route[7][contains[6]] = 8 : next(contains[8]) = contains[6];
+            route[7][contains[6]] = 9 : next(contains[9]) = contains[6];
+            route[7][contains[6]] = 10 : next(contains[10]) = contains[6];
+            route[7][contains[6]] = 11 : next(contains[11]) = contains[6];
+            route[7][contains[6]] = 12 : next(contains[12]) = contains[6];
+            route[7][contains[6]] = 13 : next(contains[13]) = contains[6];
+            route[7][contains[6]] = 14 : next(contains[14]) = contains[6];
+            route[7][contains[6]] = 15 : next(contains[15]) = contains[6];
+            route[7][contains[6]] = 16 : next(contains[16]) = contains[6];
+            route[7][contains[6]] = 17 : next(contains[17]) = contains[6];
+            route[7][contains[6]] = 18 : next(contains[18]) = contains[6];
+            route[7][contains[6]] = 19 : next(contains[19]) = contains[6];
+            route[7][contains[6]] = 20 : next(contains[20]) = contains[6];
+            route[7][contains[6]] = 21 : next(contains[21]) = contains[6];
+            route[7][contains[6]] = 22 : next(contains[22]) = contains[6];
+            route[7][contains[6]] = 23 : next(contains[23]) = contains[6];
+            route[7][contains[6]] = 24 : next(contains[24]) = contains[6];
+            route[7][contains[6]] = 25 : next(contains[25]) = contains[6];
+            route[7][contains[6]] = 26 : next(contains[26]) = contains[6];
+            route[7][contains[6]] = 27 : next(contains[27]) = contains[6];
+            esac)
+        & (route[7][contains[6]] != 1 -> next(contains[1]) = contains[1])
+        & (route[7][contains[6]] != 2 -> next(contains[2]) = contains[2])
+        & (route[7][contains[6]] != 3 -> next(contains[3]) = contains[3])
+        & (route[7][contains[6]] != 4 -> next(contains[4]) = contains[4])
+        & (route[7][contains[6]] != 5 -> next(contains[5]) = contains[5])
+        & (route[7][contains[6]] != 7 -> next(contains[7]) = contains[7])
+        & (route[7][contains[6]] != 8 -> next(contains[8]) = contains[8])
+        & (route[7][contains[6]] != 9 -> next(contains[9]) = contains[9])
+        & (route[7][contains[6]] != 10 -> next(contains[10]) = contains[10])
+        & (route[7][contains[6]] != 11 -> next(contains[11]) = contains[11])
+        & (route[7][contains[6]] != 12 -> next(contains[12]) = contains[12])
+        & (route[7][contains[6]] != 13 -> next(contains[13]) = contains[13])
+        & (route[7][contains[6]] != 14 -> next(contains[14]) = contains[14])
+        & (route[7][contains[6]] != 15 -> next(contains[15]) = contains[15])
+        & (route[7][contains[6]] != 16 -> next(contains[16]) = contains[16])
+        & (route[7][contains[6]] != 17 -> next(contains[17]) = contains[17])
+        & (route[7][contains[6]] != 18 -> next(contains[18]) = contains[18])
+        & (route[7][contains[6]] != 19 -> next(contains[19]) = contains[19])
+        & (route[7][contains[6]] != 20 -> next(contains[20]) = contains[20])
+        & (route[7][contains[6]] != 21 -> next(contains[21]) = contains[21])
+        & (route[7][contains[6]] != 22 -> next(contains[22]) = contains[22])
+        & (route[7][contains[6]] != 23 -> next(contains[23]) = contains[23])
+        & (route[7][contains[6]] != 24 -> next(contains[24]) = contains[24])
+        & (route[7][contains[6]] != 25 -> next(contains[25]) = contains[25])
+        & (route[7][contains[6]] != 26 -> next(contains[26]) = contains[26])
+        & (route[7][contains[6]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[20] != 0
+        & contains[20] != 7
+        & contains[route[7][contains[20]]] = 0
+        & next(contains[20]) = 0
+        & (case
+            route[7][contains[20]] = 1 : next(contains[1]) = contains[20];
+            route[7][contains[20]] = 2 : next(contains[2]) = contains[20];
+            route[7][contains[20]] = 3 : next(contains[3]) = contains[20];
+            route[7][contains[20]] = 4 : next(contains[4]) = contains[20];
+            route[7][contains[20]] = 5 : next(contains[5]) = contains[20];
+            route[7][contains[20]] = 6 : next(contains[6]) = contains[20];
+            route[7][contains[20]] = 7 : next(contains[7]) = contains[20];
+            route[7][contains[20]] = 8 : next(contains[8]) = contains[20];
+            route[7][contains[20]] = 9 : next(contains[9]) = contains[20];
+            route[7][contains[20]] = 10 : next(contains[10]) = contains[20];
+            route[7][contains[20]] = 11 : next(contains[11]) = contains[20];
+            route[7][contains[20]] = 12 : next(contains[12]) = contains[20];
+            route[7][contains[20]] = 13 : next(contains[13]) = contains[20];
+            route[7][contains[20]] = 14 : next(contains[14]) = contains[20];
+            route[7][contains[20]] = 15 : next(contains[15]) = contains[20];
+            route[7][contains[20]] = 16 : next(contains[16]) = contains[20];
+            route[7][contains[20]] = 17 : next(contains[17]) = contains[20];
+            route[7][contains[20]] = 18 : next(contains[18]) = contains[20];
+            route[7][contains[20]] = 19 : next(contains[19]) = contains[20];
+            route[7][contains[20]] = 20 : next(contains[20]) = contains[20];
+            route[7][contains[20]] = 21 : next(contains[21]) = contains[20];
+            route[7][contains[20]] = 22 : next(contains[22]) = contains[20];
+            route[7][contains[20]] = 23 : next(contains[23]) = contains[20];
+            route[7][contains[20]] = 24 : next(contains[24]) = contains[20];
+            route[7][contains[20]] = 25 : next(contains[25]) = contains[20];
+            route[7][contains[20]] = 26 : next(contains[26]) = contains[20];
+            route[7][contains[20]] = 27 : next(contains[27]) = contains[20];
+            esac)
+        & (route[7][contains[20]] != 1 -> next(contains[1]) = contains[1])
+        & (route[7][contains[20]] != 2 -> next(contains[2]) = contains[2])
+        & (route[7][contains[20]] != 3 -> next(contains[3]) = contains[3])
+        & (route[7][contains[20]] != 4 -> next(contains[4]) = contains[4])
+        & (route[7][contains[20]] != 5 -> next(contains[5]) = contains[5])
+        & (route[7][contains[20]] != 6 -> next(contains[6]) = contains[6])
+        & (route[7][contains[20]] != 7 -> next(contains[7]) = contains[7])
+        & (route[7][contains[20]] != 8 -> next(contains[8]) = contains[8])
+        & (route[7][contains[20]] != 9 -> next(contains[9]) = contains[9])
+        & (route[7][contains[20]] != 10 -> next(contains[10]) = contains[10])
+        & (route[7][contains[20]] != 11 -> next(contains[11]) = contains[11])
+        & (route[7][contains[20]] != 12 -> next(contains[12]) = contains[12])
+        & (route[7][contains[20]] != 13 -> next(contains[13]) = contains[13])
+        & (route[7][contains[20]] != 14 -> next(contains[14]) = contains[14])
+        & (route[7][contains[20]] != 15 -> next(contains[15]) = contains[15])
+        & (route[7][contains[20]] != 16 -> next(contains[16]) = contains[16])
+        & (route[7][contains[20]] != 17 -> next(contains[17]) = contains[17])
+        & (route[7][contains[20]] != 18 -> next(contains[18]) = contains[18])
+        & (route[7][contains[20]] != 19 -> next(contains[19]) = contains[19])
+        & (route[7][contains[20]] != 21 -> next(contains[21]) = contains[21])
+        & (route[7][contains[20]] != 22 -> next(contains[22]) = contains[22])
+        & (route[7][contains[20]] != 23 -> next(contains[23]) = contains[23])
+        & (route[7][contains[20]] != 24 -> next(contains[24]) = contains[24])
+        & (route[7][contains[20]] != 25 -> next(contains[25]) = contains[25])
+        & (route[7][contains[20]] != 26 -> next(contains[26]) = contains[26])
+        & (route[7][contains[20]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 8) ->
+    (
+          contains[7] != 0
+        & contains[7] != 8
+        & contains[route[8][contains[7]]] = 0
+        & next(contains[7]) = 0
+        & (case
+            route[8][contains[7]] = 1 : next(contains[1]) = contains[7];
+            route[8][contains[7]] = 2 : next(contains[2]) = contains[7];
+            route[8][contains[7]] = 3 : next(contains[3]) = contains[7];
+            route[8][contains[7]] = 4 : next(contains[4]) = contains[7];
+            route[8][contains[7]] = 5 : next(contains[5]) = contains[7];
+            route[8][contains[7]] = 6 : next(contains[6]) = contains[7];
+            route[8][contains[7]] = 7 : next(contains[7]) = contains[7];
+            route[8][contains[7]] = 8 : next(contains[8]) = contains[7];
+            route[8][contains[7]] = 9 : next(contains[9]) = contains[7];
+            route[8][contains[7]] = 10 : next(contains[10]) = contains[7];
+            route[8][contains[7]] = 11 : next(contains[11]) = contains[7];
+            route[8][contains[7]] = 12 : next(contains[12]) = contains[7];
+            route[8][contains[7]] = 13 : next(contains[13]) = contains[7];
+            route[8][contains[7]] = 14 : next(contains[14]) = contains[7];
+            route[8][contains[7]] = 15 : next(contains[15]) = contains[7];
+            route[8][contains[7]] = 16 : next(contains[16]) = contains[7];
+            route[8][contains[7]] = 17 : next(contains[17]) = contains[7];
+            route[8][contains[7]] = 18 : next(contains[18]) = contains[7];
+            route[8][contains[7]] = 19 : next(contains[19]) = contains[7];
+            route[8][contains[7]] = 20 : next(contains[20]) = contains[7];
+            route[8][contains[7]] = 21 : next(contains[21]) = contains[7];
+            route[8][contains[7]] = 22 : next(contains[22]) = contains[7];
+            route[8][contains[7]] = 23 : next(contains[23]) = contains[7];
+            route[8][contains[7]] = 24 : next(contains[24]) = contains[7];
+            route[8][contains[7]] = 25 : next(contains[25]) = contains[7];
+            route[8][contains[7]] = 26 : next(contains[26]) = contains[7];
+            route[8][contains[7]] = 27 : next(contains[27]) = contains[7];
+            esac)
+        & (route[8][contains[7]] != 1 -> next(contains[1]) = contains[1])
+        & (route[8][contains[7]] != 2 -> next(contains[2]) = contains[2])
+        & (route[8][contains[7]] != 3 -> next(contains[3]) = contains[3])
+        & (route[8][contains[7]] != 4 -> next(contains[4]) = contains[4])
+        & (route[8][contains[7]] != 5 -> next(contains[5]) = contains[5])
+        & (route[8][contains[7]] != 6 -> next(contains[6]) = contains[6])
+        & (route[8][contains[7]] != 8 -> next(contains[8]) = contains[8])
+        & (route[8][contains[7]] != 9 -> next(contains[9]) = contains[9])
+        & (route[8][contains[7]] != 10 -> next(contains[10]) = contains[10])
+        & (route[8][contains[7]] != 11 -> next(contains[11]) = contains[11])
+        & (route[8][contains[7]] != 12 -> next(contains[12]) = contains[12])
+        & (route[8][contains[7]] != 13 -> next(contains[13]) = contains[13])
+        & (route[8][contains[7]] != 14 -> next(contains[14]) = contains[14])
+        & (route[8][contains[7]] != 15 -> next(contains[15]) = contains[15])
+        & (route[8][contains[7]] != 16 -> next(contains[16]) = contains[16])
+        & (route[8][contains[7]] != 17 -> next(contains[17]) = contains[17])
+        & (route[8][contains[7]] != 18 -> next(contains[18]) = contains[18])
+        & (route[8][contains[7]] != 19 -> next(contains[19]) = contains[19])
+        & (route[8][contains[7]] != 20 -> next(contains[20]) = contains[20])
+        & (route[8][contains[7]] != 21 -> next(contains[21]) = contains[21])
+        & (route[8][contains[7]] != 22 -> next(contains[22]) = contains[22])
+        & (route[8][contains[7]] != 23 -> next(contains[23]) = contains[23])
+        & (route[8][contains[7]] != 24 -> next(contains[24]) = contains[24])
+        & (route[8][contains[7]] != 25 -> next(contains[25]) = contains[25])
+        & (route[8][contains[7]] != 26 -> next(contains[26]) = contains[26])
+        & (route[8][contains[7]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 9) ->
+    (
+          contains[8] != 0
+        & contains[8] != 9
+        & contains[route[9][contains[8]]] = 0
+        & next(contains[8]) = 0
+        & (case
+            route[9][contains[8]] = 1 : next(contains[1]) = contains[8];
+            route[9][contains[8]] = 2 : next(contains[2]) = contains[8];
+            route[9][contains[8]] = 3 : next(contains[3]) = contains[8];
+            route[9][contains[8]] = 4 : next(contains[4]) = contains[8];
+            route[9][contains[8]] = 5 : next(contains[5]) = contains[8];
+            route[9][contains[8]] = 6 : next(contains[6]) = contains[8];
+            route[9][contains[8]] = 7 : next(contains[7]) = contains[8];
+            route[9][contains[8]] = 8 : next(contains[8]) = contains[8];
+            route[9][contains[8]] = 9 : next(contains[9]) = contains[8];
+            route[9][contains[8]] = 10 : next(contains[10]) = contains[8];
+            route[9][contains[8]] = 11 : next(contains[11]) = contains[8];
+            route[9][contains[8]] = 12 : next(contains[12]) = contains[8];
+            route[9][contains[8]] = 13 : next(contains[13]) = contains[8];
+            route[9][contains[8]] = 14 : next(contains[14]) = contains[8];
+            route[9][contains[8]] = 15 : next(contains[15]) = contains[8];
+            route[9][contains[8]] = 16 : next(contains[16]) = contains[8];
+            route[9][contains[8]] = 17 : next(contains[17]) = contains[8];
+            route[9][contains[8]] = 18 : next(contains[18]) = contains[8];
+            route[9][contains[8]] = 19 : next(contains[19]) = contains[8];
+            route[9][contains[8]] = 20 : next(contains[20]) = contains[8];
+            route[9][contains[8]] = 21 : next(contains[21]) = contains[8];
+            route[9][contains[8]] = 22 : next(contains[22]) = contains[8];
+            route[9][contains[8]] = 23 : next(contains[23]) = contains[8];
+            route[9][contains[8]] = 24 : next(contains[24]) = contains[8];
+            route[9][contains[8]] = 25 : next(contains[25]) = contains[8];
+            route[9][contains[8]] = 26 : next(contains[26]) = contains[8];
+            route[9][contains[8]] = 27 : next(contains[27]) = contains[8];
+            esac)
+        & (route[9][contains[8]] != 1 -> next(contains[1]) = contains[1])
+        & (route[9][contains[8]] != 2 -> next(contains[2]) = contains[2])
+        & (route[9][contains[8]] != 3 -> next(contains[3]) = contains[3])
+        & (route[9][contains[8]] != 4 -> next(contains[4]) = contains[4])
+        & (route[9][contains[8]] != 5 -> next(contains[5]) = contains[5])
+        & (route[9][contains[8]] != 6 -> next(contains[6]) = contains[6])
+        & (route[9][contains[8]] != 7 -> next(contains[7]) = contains[7])
+        & (route[9][contains[8]] != 9 -> next(contains[9]) = contains[9])
+        & (route[9][contains[8]] != 10 -> next(contains[10]) = contains[10])
+        & (route[9][contains[8]] != 11 -> next(contains[11]) = contains[11])
+        & (route[9][contains[8]] != 12 -> next(contains[12]) = contains[12])
+        & (route[9][contains[8]] != 13 -> next(contains[13]) = contains[13])
+        & (route[9][contains[8]] != 14 -> next(contains[14]) = contains[14])
+        & (route[9][contains[8]] != 15 -> next(contains[15]) = contains[15])
+        & (route[9][contains[8]] != 16 -> next(contains[16]) = contains[16])
+        & (route[9][contains[8]] != 17 -> next(contains[17]) = contains[17])
+        & (route[9][contains[8]] != 18 -> next(contains[18]) = contains[18])
+        & (route[9][contains[8]] != 19 -> next(contains[19]) = contains[19])
+        & (route[9][contains[8]] != 20 -> next(contains[20]) = contains[20])
+        & (route[9][contains[8]] != 21 -> next(contains[21]) = contains[21])
+        & (route[9][contains[8]] != 22 -> next(contains[22]) = contains[22])
+        & (route[9][contains[8]] != 23 -> next(contains[23]) = contains[23])
+        & (route[9][contains[8]] != 24 -> next(contains[24]) = contains[24])
+        & (route[9][contains[8]] != 25 -> next(contains[25]) = contains[25])
+        & (route[9][contains[8]] != 26 -> next(contains[26]) = contains[26])
+        & (route[9][contains[8]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 10) ->
+    (
+          contains[9] != 0
+        & contains[9] != 10
+        & contains[route[10][contains[9]]] = 0
+        & next(contains[9]) = 0
+        & (case
+            route[10][contains[9]] = 1 : next(contains[1]) = contains[9];
+            route[10][contains[9]] = 2 : next(contains[2]) = contains[9];
+            route[10][contains[9]] = 3 : next(contains[3]) = contains[9];
+            route[10][contains[9]] = 4 : next(contains[4]) = contains[9];
+            route[10][contains[9]] = 5 : next(contains[5]) = contains[9];
+            route[10][contains[9]] = 6 : next(contains[6]) = contains[9];
+            route[10][contains[9]] = 7 : next(contains[7]) = contains[9];
+            route[10][contains[9]] = 8 : next(contains[8]) = contains[9];
+            route[10][contains[9]] = 9 : next(contains[9]) = contains[9];
+            route[10][contains[9]] = 10 : next(contains[10]) = contains[9];
+            route[10][contains[9]] = 11 : next(contains[11]) = contains[9];
+            route[10][contains[9]] = 12 : next(contains[12]) = contains[9];
+            route[10][contains[9]] = 13 : next(contains[13]) = contains[9];
+            route[10][contains[9]] = 14 : next(contains[14]) = contains[9];
+            route[10][contains[9]] = 15 : next(contains[15]) = contains[9];
+            route[10][contains[9]] = 16 : next(contains[16]) = contains[9];
+            route[10][contains[9]] = 17 : next(contains[17]) = contains[9];
+            route[10][contains[9]] = 18 : next(contains[18]) = contains[9];
+            route[10][contains[9]] = 19 : next(contains[19]) = contains[9];
+            route[10][contains[9]] = 20 : next(contains[20]) = contains[9];
+            route[10][contains[9]] = 21 : next(contains[21]) = contains[9];
+            route[10][contains[9]] = 22 : next(contains[22]) = contains[9];
+            route[10][contains[9]] = 23 : next(contains[23]) = contains[9];
+            route[10][contains[9]] = 24 : next(contains[24]) = contains[9];
+            route[10][contains[9]] = 25 : next(contains[25]) = contains[9];
+            route[10][contains[9]] = 26 : next(contains[26]) = contains[9];
+            route[10][contains[9]] = 27 : next(contains[27]) = contains[9];
+            esac)
+        & (route[10][contains[9]] != 1 -> next(contains[1]) = contains[1])
+        & (route[10][contains[9]] != 2 -> next(contains[2]) = contains[2])
+        & (route[10][contains[9]] != 3 -> next(contains[3]) = contains[3])
+        & (route[10][contains[9]] != 4 -> next(contains[4]) = contains[4])
+        & (route[10][contains[9]] != 5 -> next(contains[5]) = contains[5])
+        & (route[10][contains[9]] != 6 -> next(contains[6]) = contains[6])
+        & (route[10][contains[9]] != 7 -> next(contains[7]) = contains[7])
+        & (route[10][contains[9]] != 8 -> next(contains[8]) = contains[8])
+        & (route[10][contains[9]] != 10 -> next(contains[10]) = contains[10])
+        & (route[10][contains[9]] != 11 -> next(contains[11]) = contains[11])
+        & (route[10][contains[9]] != 12 -> next(contains[12]) = contains[12])
+        & (route[10][contains[9]] != 13 -> next(contains[13]) = contains[13])
+        & (route[10][contains[9]] != 14 -> next(contains[14]) = contains[14])
+        & (route[10][contains[9]] != 15 -> next(contains[15]) = contains[15])
+        & (route[10][contains[9]] != 16 -> next(contains[16]) = contains[16])
+        & (route[10][contains[9]] != 17 -> next(contains[17]) = contains[17])
+        & (route[10][contains[9]] != 18 -> next(contains[18]) = contains[18])
+        & (route[10][contains[9]] != 19 -> next(contains[19]) = contains[19])
+        & (route[10][contains[9]] != 20 -> next(contains[20]) = contains[20])
+        & (route[10][contains[9]] != 21 -> next(contains[21]) = contains[21])
+        & (route[10][contains[9]] != 22 -> next(contains[22]) = contains[22])
+        & (route[10][contains[9]] != 23 -> next(contains[23]) = contains[23])
+        & (route[10][contains[9]] != 24 -> next(contains[24]) = contains[24])
+        & (route[10][contains[9]] != 25 -> next(contains[25]) = contains[25])
+        & (route[10][contains[9]] != 26 -> next(contains[26]) = contains[26])
+        & (route[10][contains[9]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[27] != 0
+        & contains[27] != 10
+        & contains[route[10][contains[27]]] = 0
+        & next(contains[27]) = 0
+        & (case
+            route[10][contains[27]] = 1 : next(contains[1]) = contains[27];
+            route[10][contains[27]] = 2 : next(contains[2]) = contains[27];
+            route[10][contains[27]] = 3 : next(contains[3]) = contains[27];
+            route[10][contains[27]] = 4 : next(contains[4]) = contains[27];
+            route[10][contains[27]] = 5 : next(contains[5]) = contains[27];
+            route[10][contains[27]] = 6 : next(contains[6]) = contains[27];
+            route[10][contains[27]] = 7 : next(contains[7]) = contains[27];
+            route[10][contains[27]] = 8 : next(contains[8]) = contains[27];
+            route[10][contains[27]] = 9 : next(contains[9]) = contains[27];
+            route[10][contains[27]] = 10 : next(contains[10]) = contains[27];
+            route[10][contains[27]] = 11 : next(contains[11]) = contains[27];
+            route[10][contains[27]] = 12 : next(contains[12]) = contains[27];
+            route[10][contains[27]] = 13 : next(contains[13]) = contains[27];
+            route[10][contains[27]] = 14 : next(contains[14]) = contains[27];
+            route[10][contains[27]] = 15 : next(contains[15]) = contains[27];
+            route[10][contains[27]] = 16 : next(contains[16]) = contains[27];
+            route[10][contains[27]] = 17 : next(contains[17]) = contains[27];
+            route[10][contains[27]] = 18 : next(contains[18]) = contains[27];
+            route[10][contains[27]] = 19 : next(contains[19]) = contains[27];
+            route[10][contains[27]] = 20 : next(contains[20]) = contains[27];
+            route[10][contains[27]] = 21 : next(contains[21]) = contains[27];
+            route[10][contains[27]] = 22 : next(contains[22]) = contains[27];
+            route[10][contains[27]] = 23 : next(contains[23]) = contains[27];
+            route[10][contains[27]] = 24 : next(contains[24]) = contains[27];
+            route[10][contains[27]] = 25 : next(contains[25]) = contains[27];
+            route[10][contains[27]] = 26 : next(contains[26]) = contains[27];
+            route[10][contains[27]] = 27 : next(contains[27]) = contains[27];
+            esac)
+        & (route[10][contains[27]] != 1 -> next(contains[1]) = contains[1])
+        & (route[10][contains[27]] != 2 -> next(contains[2]) = contains[2])
+        & (route[10][contains[27]] != 3 -> next(contains[3]) = contains[3])
+        & (route[10][contains[27]] != 4 -> next(contains[4]) = contains[4])
+        & (route[10][contains[27]] != 5 -> next(contains[5]) = contains[5])
+        & (route[10][contains[27]] != 6 -> next(contains[6]) = contains[6])
+        & (route[10][contains[27]] != 7 -> next(contains[7]) = contains[7])
+        & (route[10][contains[27]] != 8 -> next(contains[8]) = contains[8])
+        & (route[10][contains[27]] != 9 -> next(contains[9]) = contains[9])
+        & (route[10][contains[27]] != 10 -> next(contains[10]) = contains[10])
+        & (route[10][contains[27]] != 11 -> next(contains[11]) = contains[11])
+        & (route[10][contains[27]] != 12 -> next(contains[12]) = contains[12])
+        & (route[10][contains[27]] != 13 -> next(contains[13]) = contains[13])
+        & (route[10][contains[27]] != 14 -> next(contains[14]) = contains[14])
+        & (route[10][contains[27]] != 15 -> next(contains[15]) = contains[15])
+        & (route[10][contains[27]] != 16 -> next(contains[16]) = contains[16])
+        & (route[10][contains[27]] != 17 -> next(contains[17]) = contains[17])
+        & (route[10][contains[27]] != 18 -> next(contains[18]) = contains[18])
+        & (route[10][contains[27]] != 19 -> next(contains[19]) = contains[19])
+        & (route[10][contains[27]] != 20 -> next(contains[20]) = contains[20])
+        & (route[10][contains[27]] != 21 -> next(contains[21]) = contains[21])
+        & (route[10][contains[27]] != 22 -> next(contains[22]) = contains[22])
+        & (route[10][contains[27]] != 23 -> next(contains[23]) = contains[23])
+        & (route[10][contains[27]] != 24 -> next(contains[24]) = contains[24])
+        & (route[10][contains[27]] != 25 -> next(contains[25]) = contains[25])
+        & (route[10][contains[27]] != 26 -> next(contains[26]) = contains[26])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 11) ->
+    (
+          contains[10] != 0
+        & contains[10] != 11
+        & contains[route[11][contains[10]]] = 0
+        & next(contains[10]) = 0
+        & (case
+            route[11][contains[10]] = 1 : next(contains[1]) = contains[10];
+            route[11][contains[10]] = 2 : next(contains[2]) = contains[10];
+            route[11][contains[10]] = 3 : next(contains[3]) = contains[10];
+            route[11][contains[10]] = 4 : next(contains[4]) = contains[10];
+            route[11][contains[10]] = 5 : next(contains[5]) = contains[10];
+            route[11][contains[10]] = 6 : next(contains[6]) = contains[10];
+            route[11][contains[10]] = 7 : next(contains[7]) = contains[10];
+            route[11][contains[10]] = 8 : next(contains[8]) = contains[10];
+            route[11][contains[10]] = 9 : next(contains[9]) = contains[10];
+            route[11][contains[10]] = 10 : next(contains[10]) = contains[10];
+            route[11][contains[10]] = 11 : next(contains[11]) = contains[10];
+            route[11][contains[10]] = 12 : next(contains[12]) = contains[10];
+            route[11][contains[10]] = 13 : next(contains[13]) = contains[10];
+            route[11][contains[10]] = 14 : next(contains[14]) = contains[10];
+            route[11][contains[10]] = 15 : next(contains[15]) = contains[10];
+            route[11][contains[10]] = 16 : next(contains[16]) = contains[10];
+            route[11][contains[10]] = 17 : next(contains[17]) = contains[10];
+            route[11][contains[10]] = 18 : next(contains[18]) = contains[10];
+            route[11][contains[10]] = 19 : next(contains[19]) = contains[10];
+            route[11][contains[10]] = 20 : next(contains[20]) = contains[10];
+            route[11][contains[10]] = 21 : next(contains[21]) = contains[10];
+            route[11][contains[10]] = 22 : next(contains[22]) = contains[10];
+            route[11][contains[10]] = 23 : next(contains[23]) = contains[10];
+            route[11][contains[10]] = 24 : next(contains[24]) = contains[10];
+            route[11][contains[10]] = 25 : next(contains[25]) = contains[10];
+            route[11][contains[10]] = 26 : next(contains[26]) = contains[10];
+            route[11][contains[10]] = 27 : next(contains[27]) = contains[10];
+            esac)
+        & (route[11][contains[10]] != 1 -> next(contains[1]) = contains[1])
+        & (route[11][contains[10]] != 2 -> next(contains[2]) = contains[2])
+        & (route[11][contains[10]] != 3 -> next(contains[3]) = contains[3])
+        & (route[11][contains[10]] != 4 -> next(contains[4]) = contains[4])
+        & (route[11][contains[10]] != 5 -> next(contains[5]) = contains[5])
+        & (route[11][contains[10]] != 6 -> next(contains[6]) = contains[6])
+        & (route[11][contains[10]] != 7 -> next(contains[7]) = contains[7])
+        & (route[11][contains[10]] != 8 -> next(contains[8]) = contains[8])
+        & (route[11][contains[10]] != 9 -> next(contains[9]) = contains[9])
+        & (route[11][contains[10]] != 11 -> next(contains[11]) = contains[11])
+        & (route[11][contains[10]] != 12 -> next(contains[12]) = contains[12])
+        & (route[11][contains[10]] != 13 -> next(contains[13]) = contains[13])
+        & (route[11][contains[10]] != 14 -> next(contains[14]) = contains[14])
+        & (route[11][contains[10]] != 15 -> next(contains[15]) = contains[15])
+        & (route[11][contains[10]] != 16 -> next(contains[16]) = contains[16])
+        & (route[11][contains[10]] != 17 -> next(contains[17]) = contains[17])
+        & (route[11][contains[10]] != 18 -> next(contains[18]) = contains[18])
+        & (route[11][contains[10]] != 19 -> next(contains[19]) = contains[19])
+        & (route[11][contains[10]] != 20 -> next(contains[20]) = contains[20])
+        & (route[11][contains[10]] != 21 -> next(contains[21]) = contains[21])
+        & (route[11][contains[10]] != 22 -> next(contains[22]) = contains[22])
+        & (route[11][contains[10]] != 23 -> next(contains[23]) = contains[23])
+        & (route[11][contains[10]] != 24 -> next(contains[24]) = contains[24])
+        & (route[11][contains[10]] != 25 -> next(contains[25]) = contains[25])
+        & (route[11][contains[10]] != 26 -> next(contains[26]) = contains[26])
+        & (route[11][contains[10]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[22] != 0
+        & contains[22] != 11
+        & contains[route[11][contains[22]]] = 0
+        & next(contains[22]) = 0
+        & (case
+            route[11][contains[22]] = 1 : next(contains[1]) = contains[22];
+            route[11][contains[22]] = 2 : next(contains[2]) = contains[22];
+            route[11][contains[22]] = 3 : next(contains[3]) = contains[22];
+            route[11][contains[22]] = 4 : next(contains[4]) = contains[22];
+            route[11][contains[22]] = 5 : next(contains[5]) = contains[22];
+            route[11][contains[22]] = 6 : next(contains[6]) = contains[22];
+            route[11][contains[22]] = 7 : next(contains[7]) = contains[22];
+            route[11][contains[22]] = 8 : next(contains[8]) = contains[22];
+            route[11][contains[22]] = 9 : next(contains[9]) = contains[22];
+            route[11][contains[22]] = 10 : next(contains[10]) = contains[22];
+            route[11][contains[22]] = 11 : next(contains[11]) = contains[22];
+            route[11][contains[22]] = 12 : next(contains[12]) = contains[22];
+            route[11][contains[22]] = 13 : next(contains[13]) = contains[22];
+            route[11][contains[22]] = 14 : next(contains[14]) = contains[22];
+            route[11][contains[22]] = 15 : next(contains[15]) = contains[22];
+            route[11][contains[22]] = 16 : next(contains[16]) = contains[22];
+            route[11][contains[22]] = 17 : next(contains[17]) = contains[22];
+            route[11][contains[22]] = 18 : next(contains[18]) = contains[22];
+            route[11][contains[22]] = 19 : next(contains[19]) = contains[22];
+            route[11][contains[22]] = 20 : next(contains[20]) = contains[22];
+            route[11][contains[22]] = 21 : next(contains[21]) = contains[22];
+            route[11][contains[22]] = 22 : next(contains[22]) = contains[22];
+            route[11][contains[22]] = 23 : next(contains[23]) = contains[22];
+            route[11][contains[22]] = 24 : next(contains[24]) = contains[22];
+            route[11][contains[22]] = 25 : next(contains[25]) = contains[22];
+            route[11][contains[22]] = 26 : next(contains[26]) = contains[22];
+            route[11][contains[22]] = 27 : next(contains[27]) = contains[22];
+            esac)
+        & (route[11][contains[22]] != 1 -> next(contains[1]) = contains[1])
+        & (route[11][contains[22]] != 2 -> next(contains[2]) = contains[2])
+        & (route[11][contains[22]] != 3 -> next(contains[3]) = contains[3])
+        & (route[11][contains[22]] != 4 -> next(contains[4]) = contains[4])
+        & (route[11][contains[22]] != 5 -> next(contains[5]) = contains[5])
+        & (route[11][contains[22]] != 6 -> next(contains[6]) = contains[6])
+        & (route[11][contains[22]] != 7 -> next(contains[7]) = contains[7])
+        & (route[11][contains[22]] != 8 -> next(contains[8]) = contains[8])
+        & (route[11][contains[22]] != 9 -> next(contains[9]) = contains[9])
+        & (route[11][contains[22]] != 10 -> next(contains[10]) = contains[10])
+        & (route[11][contains[22]] != 11 -> next(contains[11]) = contains[11])
+        & (route[11][contains[22]] != 12 -> next(contains[12]) = contains[12])
+        & (route[11][contains[22]] != 13 -> next(contains[13]) = contains[13])
+        & (route[11][contains[22]] != 14 -> next(contains[14]) = contains[14])
+        & (route[11][contains[22]] != 15 -> next(contains[15]) = contains[15])
+        & (route[11][contains[22]] != 16 -> next(contains[16]) = contains[16])
+        & (route[11][contains[22]] != 17 -> next(contains[17]) = contains[17])
+        & (route[11][contains[22]] != 18 -> next(contains[18]) = contains[18])
+        & (route[11][contains[22]] != 19 -> next(contains[19]) = contains[19])
+        & (route[11][contains[22]] != 20 -> next(contains[20]) = contains[20])
+        & (route[11][contains[22]] != 21 -> next(contains[21]) = contains[21])
+        & (route[11][contains[22]] != 23 -> next(contains[23]) = contains[23])
+        & (route[11][contains[22]] != 24 -> next(contains[24]) = contains[24])
+        & (route[11][contains[22]] != 25 -> next(contains[25]) = contains[25])
+        & (route[11][contains[22]] != 26 -> next(contains[26]) = contains[26])
+        & (route[11][contains[22]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 12) ->
+    (
+          contains[11] != 0
+        & contains[11] != 12
+        & contains[route[12][contains[11]]] = 0
+        & next(contains[11]) = 0
+        & (case
+            route[12][contains[11]] = 1 : next(contains[1]) = contains[11];
+            route[12][contains[11]] = 2 : next(contains[2]) = contains[11];
+            route[12][contains[11]] = 3 : next(contains[3]) = contains[11];
+            route[12][contains[11]] = 4 : next(contains[4]) = contains[11];
+            route[12][contains[11]] = 5 : next(contains[5]) = contains[11];
+            route[12][contains[11]] = 6 : next(contains[6]) = contains[11];
+            route[12][contains[11]] = 7 : next(contains[7]) = contains[11];
+            route[12][contains[11]] = 8 : next(contains[8]) = contains[11];
+            route[12][contains[11]] = 9 : next(contains[9]) = contains[11];
+            route[12][contains[11]] = 10 : next(contains[10]) = contains[11];
+            route[12][contains[11]] = 11 : next(contains[11]) = contains[11];
+            route[12][contains[11]] = 12 : next(contains[12]) = contains[11];
+            route[12][contains[11]] = 13 : next(contains[13]) = contains[11];
+            route[12][contains[11]] = 14 : next(contains[14]) = contains[11];
+            route[12][contains[11]] = 15 : next(contains[15]) = contains[11];
+            route[12][contains[11]] = 16 : next(contains[16]) = contains[11];
+            route[12][contains[11]] = 17 : next(contains[17]) = contains[11];
+            route[12][contains[11]] = 18 : next(contains[18]) = contains[11];
+            route[12][contains[11]] = 19 : next(contains[19]) = contains[11];
+            route[12][contains[11]] = 20 : next(contains[20]) = contains[11];
+            route[12][contains[11]] = 21 : next(contains[21]) = contains[11];
+            route[12][contains[11]] = 22 : next(contains[22]) = contains[11];
+            route[12][contains[11]] = 23 : next(contains[23]) = contains[11];
+            route[12][contains[11]] = 24 : next(contains[24]) = contains[11];
+            route[12][contains[11]] = 25 : next(contains[25]) = contains[11];
+            route[12][contains[11]] = 26 : next(contains[26]) = contains[11];
+            route[12][contains[11]] = 27 : next(contains[27]) = contains[11];
+            esac)
+        & (route[12][contains[11]] != 1 -> next(contains[1]) = contains[1])
+        & (route[12][contains[11]] != 2 -> next(contains[2]) = contains[2])
+        & (route[12][contains[11]] != 3 -> next(contains[3]) = contains[3])
+        & (route[12][contains[11]] != 4 -> next(contains[4]) = contains[4])
+        & (route[12][contains[11]] != 5 -> next(contains[5]) = contains[5])
+        & (route[12][contains[11]] != 6 -> next(contains[6]) = contains[6])
+        & (route[12][contains[11]] != 7 -> next(contains[7]) = contains[7])
+        & (route[12][contains[11]] != 8 -> next(contains[8]) = contains[8])
+        & (route[12][contains[11]] != 9 -> next(contains[9]) = contains[9])
+        & (route[12][contains[11]] != 10 -> next(contains[10]) = contains[10])
+        & (route[12][contains[11]] != 12 -> next(contains[12]) = contains[12])
+        & (route[12][contains[11]] != 13 -> next(contains[13]) = contains[13])
+        & (route[12][contains[11]] != 14 -> next(contains[14]) = contains[14])
+        & (route[12][contains[11]] != 15 -> next(contains[15]) = contains[15])
+        & (route[12][contains[11]] != 16 -> next(contains[16]) = contains[16])
+        & (route[12][contains[11]] != 17 -> next(contains[17]) = contains[17])
+        & (route[12][contains[11]] != 18 -> next(contains[18]) = contains[18])
+        & (route[12][contains[11]] != 19 -> next(contains[19]) = contains[19])
+        & (route[12][contains[11]] != 20 -> next(contains[20]) = contains[20])
+        & (route[12][contains[11]] != 21 -> next(contains[21]) = contains[21])
+        & (route[12][contains[11]] != 22 -> next(contains[22]) = contains[22])
+        & (route[12][contains[11]] != 23 -> next(contains[23]) = contains[23])
+        & (route[12][contains[11]] != 24 -> next(contains[24]) = contains[24])
+        & (route[12][contains[11]] != 25 -> next(contains[25]) = contains[25])
+        & (route[12][contains[11]] != 26 -> next(contains[26]) = contains[26])
+        & (route[12][contains[11]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 13) ->
+    (
+          contains[12] != 0
+        & contains[12] != 13
+        & contains[route[13][contains[12]]] = 0
+        & next(contains[12]) = 0
+        & (case
+            route[13][contains[12]] = 1 : next(contains[1]) = contains[12];
+            route[13][contains[12]] = 2 : next(contains[2]) = contains[12];
+            route[13][contains[12]] = 3 : next(contains[3]) = contains[12];
+            route[13][contains[12]] = 4 : next(contains[4]) = contains[12];
+            route[13][contains[12]] = 5 : next(contains[5]) = contains[12];
+            route[13][contains[12]] = 6 : next(contains[6]) = contains[12];
+            route[13][contains[12]] = 7 : next(contains[7]) = contains[12];
+            route[13][contains[12]] = 8 : next(contains[8]) = contains[12];
+            route[13][contains[12]] = 9 : next(contains[9]) = contains[12];
+            route[13][contains[12]] = 10 : next(contains[10]) = contains[12];
+            route[13][contains[12]] = 11 : next(contains[11]) = contains[12];
+            route[13][contains[12]] = 12 : next(contains[12]) = contains[12];
+            route[13][contains[12]] = 13 : next(contains[13]) = contains[12];
+            route[13][contains[12]] = 14 : next(contains[14]) = contains[12];
+            route[13][contains[12]] = 15 : next(contains[15]) = contains[12];
+            route[13][contains[12]] = 16 : next(contains[16]) = contains[12];
+            route[13][contains[12]] = 17 : next(contains[17]) = contains[12];
+            route[13][contains[12]] = 18 : next(contains[18]) = contains[12];
+            route[13][contains[12]] = 19 : next(contains[19]) = contains[12];
+            route[13][contains[12]] = 20 : next(contains[20]) = contains[12];
+            route[13][contains[12]] = 21 : next(contains[21]) = contains[12];
+            route[13][contains[12]] = 22 : next(contains[22]) = contains[12];
+            route[13][contains[12]] = 23 : next(contains[23]) = contains[12];
+            route[13][contains[12]] = 24 : next(contains[24]) = contains[12];
+            route[13][contains[12]] = 25 : next(contains[25]) = contains[12];
+            route[13][contains[12]] = 26 : next(contains[26]) = contains[12];
+            route[13][contains[12]] = 27 : next(contains[27]) = contains[12];
+            esac)
+        & (route[13][contains[12]] != 1 -> next(contains[1]) = contains[1])
+        & (route[13][contains[12]] != 2 -> next(contains[2]) = contains[2])
+        & (route[13][contains[12]] != 3 -> next(contains[3]) = contains[3])
+        & (route[13][contains[12]] != 4 -> next(contains[4]) = contains[4])
+        & (route[13][contains[12]] != 5 -> next(contains[5]) = contains[5])
+        & (route[13][contains[12]] != 6 -> next(contains[6]) = contains[6])
+        & (route[13][contains[12]] != 7 -> next(contains[7]) = contains[7])
+        & (route[13][contains[12]] != 8 -> next(contains[8]) = contains[8])
+        & (route[13][contains[12]] != 9 -> next(contains[9]) = contains[9])
+        & (route[13][contains[12]] != 10 -> next(contains[10]) = contains[10])
+        & (route[13][contains[12]] != 11 -> next(contains[11]) = contains[11])
+        & (route[13][contains[12]] != 13 -> next(contains[13]) = contains[13])
+        & (route[13][contains[12]] != 14 -> next(contains[14]) = contains[14])
+        & (route[13][contains[12]] != 15 -> next(contains[15]) = contains[15])
+        & (route[13][contains[12]] != 16 -> next(contains[16]) = contains[16])
+        & (route[13][contains[12]] != 17 -> next(contains[17]) = contains[17])
+        & (route[13][contains[12]] != 18 -> next(contains[18]) = contains[18])
+        & (route[13][contains[12]] != 19 -> next(contains[19]) = contains[19])
+        & (route[13][contains[12]] != 20 -> next(contains[20]) = contains[20])
+        & (route[13][contains[12]] != 21 -> next(contains[21]) = contains[21])
+        & (route[13][contains[12]] != 22 -> next(contains[22]) = contains[22])
+        & (route[13][contains[12]] != 23 -> next(contains[23]) = contains[23])
+        & (route[13][contains[12]] != 24 -> next(contains[24]) = contains[24])
+        & (route[13][contains[12]] != 25 -> next(contains[25]) = contains[25])
+        & (route[13][contains[12]] != 26 -> next(contains[26]) = contains[26])
+        & (route[13][contains[12]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 14) ->
+    (
+          contains[13] != 0
+        & contains[13] != 14
+        & contains[route[14][contains[13]]] = 0
+        & next(contains[13]) = 0
+        & (case
+            route[14][contains[13]] = 1 : next(contains[1]) = contains[13];
+            route[14][contains[13]] = 2 : next(contains[2]) = contains[13];
+            route[14][contains[13]] = 3 : next(contains[3]) = contains[13];
+            route[14][contains[13]] = 4 : next(contains[4]) = contains[13];
+            route[14][contains[13]] = 5 : next(contains[5]) = contains[13];
+            route[14][contains[13]] = 6 : next(contains[6]) = contains[13];
+            route[14][contains[13]] = 7 : next(contains[7]) = contains[13];
+            route[14][contains[13]] = 8 : next(contains[8]) = contains[13];
+            route[14][contains[13]] = 9 : next(contains[9]) = contains[13];
+            route[14][contains[13]] = 10 : next(contains[10]) = contains[13];
+            route[14][contains[13]] = 11 : next(contains[11]) = contains[13];
+            route[14][contains[13]] = 12 : next(contains[12]) = contains[13];
+            route[14][contains[13]] = 13 : next(contains[13]) = contains[13];
+            route[14][contains[13]] = 14 : next(contains[14]) = contains[13];
+            route[14][contains[13]] = 15 : next(contains[15]) = contains[13];
+            route[14][contains[13]] = 16 : next(contains[16]) = contains[13];
+            route[14][contains[13]] = 17 : next(contains[17]) = contains[13];
+            route[14][contains[13]] = 18 : next(contains[18]) = contains[13];
+            route[14][contains[13]] = 19 : next(contains[19]) = contains[13];
+            route[14][contains[13]] = 20 : next(contains[20]) = contains[13];
+            route[14][contains[13]] = 21 : next(contains[21]) = contains[13];
+            route[14][contains[13]] = 22 : next(contains[22]) = contains[13];
+            route[14][contains[13]] = 23 : next(contains[23]) = contains[13];
+            route[14][contains[13]] = 24 : next(contains[24]) = contains[13];
+            route[14][contains[13]] = 25 : next(contains[25]) = contains[13];
+            route[14][contains[13]] = 26 : next(contains[26]) = contains[13];
+            route[14][contains[13]] = 27 : next(contains[27]) = contains[13];
+            esac)
+        & (route[14][contains[13]] != 1 -> next(contains[1]) = contains[1])
+        & (route[14][contains[13]] != 2 -> next(contains[2]) = contains[2])
+        & (route[14][contains[13]] != 3 -> next(contains[3]) = contains[3])
+        & (route[14][contains[13]] != 4 -> next(contains[4]) = contains[4])
+        & (route[14][contains[13]] != 5 -> next(contains[5]) = contains[5])
+        & (route[14][contains[13]] != 6 -> next(contains[6]) = contains[6])
+        & (route[14][contains[13]] != 7 -> next(contains[7]) = contains[7])
+        & (route[14][contains[13]] != 8 -> next(contains[8]) = contains[8])
+        & (route[14][contains[13]] != 9 -> next(contains[9]) = contains[9])
+        & (route[14][contains[13]] != 10 -> next(contains[10]) = contains[10])
+        & (route[14][contains[13]] != 11 -> next(contains[11]) = contains[11])
+        & (route[14][contains[13]] != 12 -> next(contains[12]) = contains[12])
+        & (route[14][contains[13]] != 14 -> next(contains[14]) = contains[14])
+        & (route[14][contains[13]] != 15 -> next(contains[15]) = contains[15])
+        & (route[14][contains[13]] != 16 -> next(contains[16]) = contains[16])
+        & (route[14][contains[13]] != 17 -> next(contains[17]) = contains[17])
+        & (route[14][contains[13]] != 18 -> next(contains[18]) = contains[18])
+        & (route[14][contains[13]] != 19 -> next(contains[19]) = contains[19])
+        & (route[14][contains[13]] != 20 -> next(contains[20]) = contains[20])
+        & (route[14][contains[13]] != 21 -> next(contains[21]) = contains[21])
+        & (route[14][contains[13]] != 22 -> next(contains[22]) = contains[22])
+        & (route[14][contains[13]] != 23 -> next(contains[23]) = contains[23])
+        & (route[14][contains[13]] != 24 -> next(contains[24]) = contains[24])
+        & (route[14][contains[13]] != 25 -> next(contains[25]) = contains[25])
+        & (route[14][contains[13]] != 26 -> next(contains[26]) = contains[26])
+        & (route[14][contains[13]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 15) ->
+    (
+          contains[14] != 0
+        & contains[14] != 15
+        & contains[route[15][contains[14]]] = 0
+        & next(contains[14]) = 0
+        & (case
+            route[15][contains[14]] = 1 : next(contains[1]) = contains[14];
+            route[15][contains[14]] = 2 : next(contains[2]) = contains[14];
+            route[15][contains[14]] = 3 : next(contains[3]) = contains[14];
+            route[15][contains[14]] = 4 : next(contains[4]) = contains[14];
+            route[15][contains[14]] = 5 : next(contains[5]) = contains[14];
+            route[15][contains[14]] = 6 : next(contains[6]) = contains[14];
+            route[15][contains[14]] = 7 : next(contains[7]) = contains[14];
+            route[15][contains[14]] = 8 : next(contains[8]) = contains[14];
+            route[15][contains[14]] = 9 : next(contains[9]) = contains[14];
+            route[15][contains[14]] = 10 : next(contains[10]) = contains[14];
+            route[15][contains[14]] = 11 : next(contains[11]) = contains[14];
+            route[15][contains[14]] = 12 : next(contains[12]) = contains[14];
+            route[15][contains[14]] = 13 : next(contains[13]) = contains[14];
+            route[15][contains[14]] = 14 : next(contains[14]) = contains[14];
+            route[15][contains[14]] = 15 : next(contains[15]) = contains[14];
+            route[15][contains[14]] = 16 : next(contains[16]) = contains[14];
+            route[15][contains[14]] = 17 : next(contains[17]) = contains[14];
+            route[15][contains[14]] = 18 : next(contains[18]) = contains[14];
+            route[15][contains[14]] = 19 : next(contains[19]) = contains[14];
+            route[15][contains[14]] = 20 : next(contains[20]) = contains[14];
+            route[15][contains[14]] = 21 : next(contains[21]) = contains[14];
+            route[15][contains[14]] = 22 : next(contains[22]) = contains[14];
+            route[15][contains[14]] = 23 : next(contains[23]) = contains[14];
+            route[15][contains[14]] = 24 : next(contains[24]) = contains[14];
+            route[15][contains[14]] = 25 : next(contains[25]) = contains[14];
+            route[15][contains[14]] = 26 : next(contains[26]) = contains[14];
+            route[15][contains[14]] = 27 : next(contains[27]) = contains[14];
+            esac)
+        & (route[15][contains[14]] != 1 -> next(contains[1]) = contains[1])
+        & (route[15][contains[14]] != 2 -> next(contains[2]) = contains[2])
+        & (route[15][contains[14]] != 3 -> next(contains[3]) = contains[3])
+        & (route[15][contains[14]] != 4 -> next(contains[4]) = contains[4])
+        & (route[15][contains[14]] != 5 -> next(contains[5]) = contains[5])
+        & (route[15][contains[14]] != 6 -> next(contains[6]) = contains[6])
+        & (route[15][contains[14]] != 7 -> next(contains[7]) = contains[7])
+        & (route[15][contains[14]] != 8 -> next(contains[8]) = contains[8])
+        & (route[15][contains[14]] != 9 -> next(contains[9]) = contains[9])
+        & (route[15][contains[14]] != 10 -> next(contains[10]) = contains[10])
+        & (route[15][contains[14]] != 11 -> next(contains[11]) = contains[11])
+        & (route[15][contains[14]] != 12 -> next(contains[12]) = contains[12])
+        & (route[15][contains[14]] != 13 -> next(contains[13]) = contains[13])
+        & (route[15][contains[14]] != 15 -> next(contains[15]) = contains[15])
+        & (route[15][contains[14]] != 16 -> next(contains[16]) = contains[16])
+        & (route[15][contains[14]] != 17 -> next(contains[17]) = contains[17])
+        & (route[15][contains[14]] != 18 -> next(contains[18]) = contains[18])
+        & (route[15][contains[14]] != 19 -> next(contains[19]) = contains[19])
+        & (route[15][contains[14]] != 20 -> next(contains[20]) = contains[20])
+        & (route[15][contains[14]] != 21 -> next(contains[21]) = contains[21])
+        & (route[15][contains[14]] != 22 -> next(contains[22]) = contains[22])
+        & (route[15][contains[14]] != 23 -> next(contains[23]) = contains[23])
+        & (route[15][contains[14]] != 24 -> next(contains[24]) = contains[24])
+        & (route[15][contains[14]] != 25 -> next(contains[25]) = contains[25])
+        & (route[15][contains[14]] != 26 -> next(contains[26]) = contains[26])
+        & (route[15][contains[14]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[24] != 0
+        & contains[24] != 15
+        & contains[route[15][contains[24]]] = 0
+        & next(contains[24]) = 0
+        & (case
+            route[15][contains[24]] = 1 : next(contains[1]) = contains[24];
+            route[15][contains[24]] = 2 : next(contains[2]) = contains[24];
+            route[15][contains[24]] = 3 : next(contains[3]) = contains[24];
+            route[15][contains[24]] = 4 : next(contains[4]) = contains[24];
+            route[15][contains[24]] = 5 : next(contains[5]) = contains[24];
+            route[15][contains[24]] = 6 : next(contains[6]) = contains[24];
+            route[15][contains[24]] = 7 : next(contains[7]) = contains[24];
+            route[15][contains[24]] = 8 : next(contains[8]) = contains[24];
+            route[15][contains[24]] = 9 : next(contains[9]) = contains[24];
+            route[15][contains[24]] = 10 : next(contains[10]) = contains[24];
+            route[15][contains[24]] = 11 : next(contains[11]) = contains[24];
+            route[15][contains[24]] = 12 : next(contains[12]) = contains[24];
+            route[15][contains[24]] = 13 : next(contains[13]) = contains[24];
+            route[15][contains[24]] = 14 : next(contains[14]) = contains[24];
+            route[15][contains[24]] = 15 : next(contains[15]) = contains[24];
+            route[15][contains[24]] = 16 : next(contains[16]) = contains[24];
+            route[15][contains[24]] = 17 : next(contains[17]) = contains[24];
+            route[15][contains[24]] = 18 : next(contains[18]) = contains[24];
+            route[15][contains[24]] = 19 : next(contains[19]) = contains[24];
+            route[15][contains[24]] = 20 : next(contains[20]) = contains[24];
+            route[15][contains[24]] = 21 : next(contains[21]) = contains[24];
+            route[15][contains[24]] = 22 : next(contains[22]) = contains[24];
+            route[15][contains[24]] = 23 : next(contains[23]) = contains[24];
+            route[15][contains[24]] = 24 : next(contains[24]) = contains[24];
+            route[15][contains[24]] = 25 : next(contains[25]) = contains[24];
+            route[15][contains[24]] = 26 : next(contains[26]) = contains[24];
+            route[15][contains[24]] = 27 : next(contains[27]) = contains[24];
+            esac)
+        & (route[15][contains[24]] != 1 -> next(contains[1]) = contains[1])
+        & (route[15][contains[24]] != 2 -> next(contains[2]) = contains[2])
+        & (route[15][contains[24]] != 3 -> next(contains[3]) = contains[3])
+        & (route[15][contains[24]] != 4 -> next(contains[4]) = contains[4])
+        & (route[15][contains[24]] != 5 -> next(contains[5]) = contains[5])
+        & (route[15][contains[24]] != 6 -> next(contains[6]) = contains[6])
+        & (route[15][contains[24]] != 7 -> next(contains[7]) = contains[7])
+        & (route[15][contains[24]] != 8 -> next(contains[8]) = contains[8])
+        & (route[15][contains[24]] != 9 -> next(contains[9]) = contains[9])
+        & (route[15][contains[24]] != 10 -> next(contains[10]) = contains[10])
+        & (route[15][contains[24]] != 11 -> next(contains[11]) = contains[11])
+        & (route[15][contains[24]] != 12 -> next(contains[12]) = contains[12])
+        & (route[15][contains[24]] != 13 -> next(contains[13]) = contains[13])
+        & (route[15][contains[24]] != 14 -> next(contains[14]) = contains[14])
+        & (route[15][contains[24]] != 15 -> next(contains[15]) = contains[15])
+        & (route[15][contains[24]] != 16 -> next(contains[16]) = contains[16])
+        & (route[15][contains[24]] != 17 -> next(contains[17]) = contains[17])
+        & (route[15][contains[24]] != 18 -> next(contains[18]) = contains[18])
+        & (route[15][contains[24]] != 19 -> next(contains[19]) = contains[19])
+        & (route[15][contains[24]] != 20 -> next(contains[20]) = contains[20])
+        & (route[15][contains[24]] != 21 -> next(contains[21]) = contains[21])
+        & (route[15][contains[24]] != 22 -> next(contains[22]) = contains[22])
+        & (route[15][contains[24]] != 23 -> next(contains[23]) = contains[23])
+        & (route[15][contains[24]] != 25 -> next(contains[25]) = contains[25])
+        & (route[15][contains[24]] != 26 -> next(contains[26]) = contains[26])
+        & (route[15][contains[24]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 16) ->
+    (
+          contains[15] != 0
+        & contains[15] != 16
+        & contains[route[16][contains[15]]] = 0
+        & next(contains[15]) = 0
+        & (case
+            route[16][contains[15]] = 1 : next(contains[1]) = contains[15];
+            route[16][contains[15]] = 2 : next(contains[2]) = contains[15];
+            route[16][contains[15]] = 3 : next(contains[3]) = contains[15];
+            route[16][contains[15]] = 4 : next(contains[4]) = contains[15];
+            route[16][contains[15]] = 5 : next(contains[5]) = contains[15];
+            route[16][contains[15]] = 6 : next(contains[6]) = contains[15];
+            route[16][contains[15]] = 7 : next(contains[7]) = contains[15];
+            route[16][contains[15]] = 8 : next(contains[8]) = contains[15];
+            route[16][contains[15]] = 9 : next(contains[9]) = contains[15];
+            route[16][contains[15]] = 10 : next(contains[10]) = contains[15];
+            route[16][contains[15]] = 11 : next(contains[11]) = contains[15];
+            route[16][contains[15]] = 12 : next(contains[12]) = contains[15];
+            route[16][contains[15]] = 13 : next(contains[13]) = contains[15];
+            route[16][contains[15]] = 14 : next(contains[14]) = contains[15];
+            route[16][contains[15]] = 15 : next(contains[15]) = contains[15];
+            route[16][contains[15]] = 16 : next(contains[16]) = contains[15];
+            route[16][contains[15]] = 17 : next(contains[17]) = contains[15];
+            route[16][contains[15]] = 18 : next(contains[18]) = contains[15];
+            route[16][contains[15]] = 19 : next(contains[19]) = contains[15];
+            route[16][contains[15]] = 20 : next(contains[20]) = contains[15];
+            route[16][contains[15]] = 21 : next(contains[21]) = contains[15];
+            route[16][contains[15]] = 22 : next(contains[22]) = contains[15];
+            route[16][contains[15]] = 23 : next(contains[23]) = contains[15];
+            route[16][contains[15]] = 24 : next(contains[24]) = contains[15];
+            route[16][contains[15]] = 25 : next(contains[25]) = contains[15];
+            route[16][contains[15]] = 26 : next(contains[26]) = contains[15];
+            route[16][contains[15]] = 27 : next(contains[27]) = contains[15];
+            esac)
+        & (route[16][contains[15]] != 1 -> next(contains[1]) = contains[1])
+        & (route[16][contains[15]] != 2 -> next(contains[2]) = contains[2])
+        & (route[16][contains[15]] != 3 -> next(contains[3]) = contains[3])
+        & (route[16][contains[15]] != 4 -> next(contains[4]) = contains[4])
+        & (route[16][contains[15]] != 5 -> next(contains[5]) = contains[5])
+        & (route[16][contains[15]] != 6 -> next(contains[6]) = contains[6])
+        & (route[16][contains[15]] != 7 -> next(contains[7]) = contains[7])
+        & (route[16][contains[15]] != 8 -> next(contains[8]) = contains[8])
+        & (route[16][contains[15]] != 9 -> next(contains[9]) = contains[9])
+        & (route[16][contains[15]] != 10 -> next(contains[10]) = contains[10])
+        & (route[16][contains[15]] != 11 -> next(contains[11]) = contains[11])
+        & (route[16][contains[15]] != 12 -> next(contains[12]) = contains[12])
+        & (route[16][contains[15]] != 13 -> next(contains[13]) = contains[13])
+        & (route[16][contains[15]] != 14 -> next(contains[14]) = contains[14])
+        & (route[16][contains[15]] != 16 -> next(contains[16]) = contains[16])
+        & (route[16][contains[15]] != 17 -> next(contains[17]) = contains[17])
+        & (route[16][contains[15]] != 18 -> next(contains[18]) = contains[18])
+        & (route[16][contains[15]] != 19 -> next(contains[19]) = contains[19])
+        & (route[16][contains[15]] != 20 -> next(contains[20]) = contains[20])
+        & (route[16][contains[15]] != 21 -> next(contains[21]) = contains[21])
+        & (route[16][contains[15]] != 22 -> next(contains[22]) = contains[22])
+        & (route[16][contains[15]] != 23 -> next(contains[23]) = contains[23])
+        & (route[16][contains[15]] != 24 -> next(contains[24]) = contains[24])
+        & (route[16][contains[15]] != 25 -> next(contains[25]) = contains[25])
+        & (route[16][contains[15]] != 26 -> next(contains[26]) = contains[26])
+        & (route[16][contains[15]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 17) ->
+    (
+          contains[17] != 0
+        & contains[17] != 17
+        & contains[route[17][contains[17]]] = 0
+        & next(contains[17]) = 0
+        & (case
+            route[17][contains[17]] = 1 : next(contains[1]) = contains[17];
+            route[17][contains[17]] = 2 : next(contains[2]) = contains[17];
+            route[17][contains[17]] = 3 : next(contains[3]) = contains[17];
+            route[17][contains[17]] = 4 : next(contains[4]) = contains[17];
+            route[17][contains[17]] = 5 : next(contains[5]) = contains[17];
+            route[17][contains[17]] = 6 : next(contains[6]) = contains[17];
+            route[17][contains[17]] = 7 : next(contains[7]) = contains[17];
+            route[17][contains[17]] = 8 : next(contains[8]) = contains[17];
+            route[17][contains[17]] = 9 : next(contains[9]) = contains[17];
+            route[17][contains[17]] = 10 : next(contains[10]) = contains[17];
+            route[17][contains[17]] = 11 : next(contains[11]) = contains[17];
+            route[17][contains[17]] = 12 : next(contains[12]) = contains[17];
+            route[17][contains[17]] = 13 : next(contains[13]) = contains[17];
+            route[17][contains[17]] = 14 : next(contains[14]) = contains[17];
+            route[17][contains[17]] = 15 : next(contains[15]) = contains[17];
+            route[17][contains[17]] = 16 : next(contains[16]) = contains[17];
+            route[17][contains[17]] = 17 : next(contains[17]) = contains[17];
+            route[17][contains[17]] = 18 : next(contains[18]) = contains[17];
+            route[17][contains[17]] = 19 : next(contains[19]) = contains[17];
+            route[17][contains[17]] = 20 : next(contains[20]) = contains[17];
+            route[17][contains[17]] = 21 : next(contains[21]) = contains[17];
+            route[17][contains[17]] = 22 : next(contains[22]) = contains[17];
+            route[17][contains[17]] = 23 : next(contains[23]) = contains[17];
+            route[17][contains[17]] = 24 : next(contains[24]) = contains[17];
+            route[17][contains[17]] = 25 : next(contains[25]) = contains[17];
+            route[17][contains[17]] = 26 : next(contains[26]) = contains[17];
+            route[17][contains[17]] = 27 : next(contains[27]) = contains[17];
+            esac)
+        & (route[17][contains[17]] != 1 -> next(contains[1]) = contains[1])
+        & (route[17][contains[17]] != 2 -> next(contains[2]) = contains[2])
+        & (route[17][contains[17]] != 3 -> next(contains[3]) = contains[3])
+        & (route[17][contains[17]] != 4 -> next(contains[4]) = contains[4])
+        & (route[17][contains[17]] != 5 -> next(contains[5]) = contains[5])
+        & (route[17][contains[17]] != 6 -> next(contains[6]) = contains[6])
+        & (route[17][contains[17]] != 7 -> next(contains[7]) = contains[7])
+        & (route[17][contains[17]] != 8 -> next(contains[8]) = contains[8])
+        & (route[17][contains[17]] != 9 -> next(contains[9]) = contains[9])
+        & (route[17][contains[17]] != 10 -> next(contains[10]) = contains[10])
+        & (route[17][contains[17]] != 11 -> next(contains[11]) = contains[11])
+        & (route[17][contains[17]] != 12 -> next(contains[12]) = contains[12])
+        & (route[17][contains[17]] != 13 -> next(contains[13]) = contains[13])
+        & (route[17][contains[17]] != 14 -> next(contains[14]) = contains[14])
+        & (route[17][contains[17]] != 15 -> next(contains[15]) = contains[15])
+        & (route[17][contains[17]] != 16 -> next(contains[16]) = contains[16])
+        & (route[17][contains[17]] != 18 -> next(contains[18]) = contains[18])
+        & (route[17][contains[17]] != 19 -> next(contains[19]) = contains[19])
+        & (route[17][contains[17]] != 20 -> next(contains[20]) = contains[20])
+        & (route[17][contains[17]] != 21 -> next(contains[21]) = contains[21])
+        & (route[17][contains[17]] != 22 -> next(contains[22]) = contains[22])
+        & (route[17][contains[17]] != 23 -> next(contains[23]) = contains[23])
+        & (route[17][contains[17]] != 24 -> next(contains[24]) = contains[24])
+        & (route[17][contains[17]] != 25 -> next(contains[25]) = contains[25])
+        & (route[17][contains[17]] != 26 -> next(contains[26]) = contains[26])
+        & (route[17][contains[17]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[19] != 0
+        & contains[19] != 17
+        & contains[route[17][contains[19]]] = 0
+        & next(contains[19]) = 0
+        & (case
+            route[17][contains[19]] = 1 : next(contains[1]) = contains[19];
+            route[17][contains[19]] = 2 : next(contains[2]) = contains[19];
+            route[17][contains[19]] = 3 : next(contains[3]) = contains[19];
+            route[17][contains[19]] = 4 : next(contains[4]) = contains[19];
+            route[17][contains[19]] = 5 : next(contains[5]) = contains[19];
+            route[17][contains[19]] = 6 : next(contains[6]) = contains[19];
+            route[17][contains[19]] = 7 : next(contains[7]) = contains[19];
+            route[17][contains[19]] = 8 : next(contains[8]) = contains[19];
+            route[17][contains[19]] = 9 : next(contains[9]) = contains[19];
+            route[17][contains[19]] = 10 : next(contains[10]) = contains[19];
+            route[17][contains[19]] = 11 : next(contains[11]) = contains[19];
+            route[17][contains[19]] = 12 : next(contains[12]) = contains[19];
+            route[17][contains[19]] = 13 : next(contains[13]) = contains[19];
+            route[17][contains[19]] = 14 : next(contains[14]) = contains[19];
+            route[17][contains[19]] = 15 : next(contains[15]) = contains[19];
+            route[17][contains[19]] = 16 : next(contains[16]) = contains[19];
+            route[17][contains[19]] = 17 : next(contains[17]) = contains[19];
+            route[17][contains[19]] = 18 : next(contains[18]) = contains[19];
+            route[17][contains[19]] = 19 : next(contains[19]) = contains[19];
+            route[17][contains[19]] = 20 : next(contains[20]) = contains[19];
+            route[17][contains[19]] = 21 : next(contains[21]) = contains[19];
+            route[17][contains[19]] = 22 : next(contains[22]) = contains[19];
+            route[17][contains[19]] = 23 : next(contains[23]) = contains[19];
+            route[17][contains[19]] = 24 : next(contains[24]) = contains[19];
+            route[17][contains[19]] = 25 : next(contains[25]) = contains[19];
+            route[17][contains[19]] = 26 : next(contains[26]) = contains[19];
+            route[17][contains[19]] = 27 : next(contains[27]) = contains[19];
+            esac)
+        & (route[17][contains[19]] != 1 -> next(contains[1]) = contains[1])
+        & (route[17][contains[19]] != 2 -> next(contains[2]) = contains[2])
+        & (route[17][contains[19]] != 3 -> next(contains[3]) = contains[3])
+        & (route[17][contains[19]] != 4 -> next(contains[4]) = contains[4])
+        & (route[17][contains[19]] != 5 -> next(contains[5]) = contains[5])
+        & (route[17][contains[19]] != 6 -> next(contains[6]) = contains[6])
+        & (route[17][contains[19]] != 7 -> next(contains[7]) = contains[7])
+        & (route[17][contains[19]] != 8 -> next(contains[8]) = contains[8])
+        & (route[17][contains[19]] != 9 -> next(contains[9]) = contains[9])
+        & (route[17][contains[19]] != 10 -> next(contains[10]) = contains[10])
+        & (route[17][contains[19]] != 11 -> next(contains[11]) = contains[11])
+        & (route[17][contains[19]] != 12 -> next(contains[12]) = contains[12])
+        & (route[17][contains[19]] != 13 -> next(contains[13]) = contains[13])
+        & (route[17][contains[19]] != 14 -> next(contains[14]) = contains[14])
+        & (route[17][contains[19]] != 15 -> next(contains[15]) = contains[15])
+        & (route[17][contains[19]] != 16 -> next(contains[16]) = contains[16])
+        & (route[17][contains[19]] != 17 -> next(contains[17]) = contains[17])
+        & (route[17][contains[19]] != 18 -> next(contains[18]) = contains[18])
+        & (route[17][contains[19]] != 20 -> next(contains[20]) = contains[20])
+        & (route[17][contains[19]] != 21 -> next(contains[21]) = contains[21])
+        & (route[17][contains[19]] != 22 -> next(contains[22]) = contains[22])
+        & (route[17][contains[19]] != 23 -> next(contains[23]) = contains[23])
+        & (route[17][contains[19]] != 24 -> next(contains[24]) = contains[24])
+        & (route[17][contains[19]] != 25 -> next(contains[25]) = contains[25])
+        & (route[17][contains[19]] != 26 -> next(contains[26]) = contains[26])
+        & (route[17][contains[19]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[21] != 0
+        & contains[21] != 17
+        & contains[route[17][contains[21]]] = 0
+        & next(contains[21]) = 0
+        & (case
+            route[17][contains[21]] = 1 : next(contains[1]) = contains[21];
+            route[17][contains[21]] = 2 : next(contains[2]) = contains[21];
+            route[17][contains[21]] = 3 : next(contains[3]) = contains[21];
+            route[17][contains[21]] = 4 : next(contains[4]) = contains[21];
+            route[17][contains[21]] = 5 : next(contains[5]) = contains[21];
+            route[17][contains[21]] = 6 : next(contains[6]) = contains[21];
+            route[17][contains[21]] = 7 : next(contains[7]) = contains[21];
+            route[17][contains[21]] = 8 : next(contains[8]) = contains[21];
+            route[17][contains[21]] = 9 : next(contains[9]) = contains[21];
+            route[17][contains[21]] = 10 : next(contains[10]) = contains[21];
+            route[17][contains[21]] = 11 : next(contains[11]) = contains[21];
+            route[17][contains[21]] = 12 : next(contains[12]) = contains[21];
+            route[17][contains[21]] = 13 : next(contains[13]) = contains[21];
+            route[17][contains[21]] = 14 : next(contains[14]) = contains[21];
+            route[17][contains[21]] = 15 : next(contains[15]) = contains[21];
+            route[17][contains[21]] = 16 : next(contains[16]) = contains[21];
+            route[17][contains[21]] = 17 : next(contains[17]) = contains[21];
+            route[17][contains[21]] = 18 : next(contains[18]) = contains[21];
+            route[17][contains[21]] = 19 : next(contains[19]) = contains[21];
+            route[17][contains[21]] = 20 : next(contains[20]) = contains[21];
+            route[17][contains[21]] = 21 : next(contains[21]) = contains[21];
+            route[17][contains[21]] = 22 : next(contains[22]) = contains[21];
+            route[17][contains[21]] = 23 : next(contains[23]) = contains[21];
+            route[17][contains[21]] = 24 : next(contains[24]) = contains[21];
+            route[17][contains[21]] = 25 : next(contains[25]) = contains[21];
+            route[17][contains[21]] = 26 : next(contains[26]) = contains[21];
+            route[17][contains[21]] = 27 : next(contains[27]) = contains[21];
+            esac)
+        & (route[17][contains[21]] != 1 -> next(contains[1]) = contains[1])
+        & (route[17][contains[21]] != 2 -> next(contains[2]) = contains[2])
+        & (route[17][contains[21]] != 3 -> next(contains[3]) = contains[3])
+        & (route[17][contains[21]] != 4 -> next(contains[4]) = contains[4])
+        & (route[17][contains[21]] != 5 -> next(contains[5]) = contains[5])
+        & (route[17][contains[21]] != 6 -> next(contains[6]) = contains[6])
+        & (route[17][contains[21]] != 7 -> next(contains[7]) = contains[7])
+        & (route[17][contains[21]] != 8 -> next(contains[8]) = contains[8])
+        & (route[17][contains[21]] != 9 -> next(contains[9]) = contains[9])
+        & (route[17][contains[21]] != 10 -> next(contains[10]) = contains[10])
+        & (route[17][contains[21]] != 11 -> next(contains[11]) = contains[11])
+        & (route[17][contains[21]] != 12 -> next(contains[12]) = contains[12])
+        & (route[17][contains[21]] != 13 -> next(contains[13]) = contains[13])
+        & (route[17][contains[21]] != 14 -> next(contains[14]) = contains[14])
+        & (route[17][contains[21]] != 15 -> next(contains[15]) = contains[15])
+        & (route[17][contains[21]] != 16 -> next(contains[16]) = contains[16])
+        & (route[17][contains[21]] != 17 -> next(contains[17]) = contains[17])
+        & (route[17][contains[21]] != 18 -> next(contains[18]) = contains[18])
+        & (route[17][contains[21]] != 19 -> next(contains[19]) = contains[19])
+        & (route[17][contains[21]] != 20 -> next(contains[20]) = contains[20])
+        & (route[17][contains[21]] != 22 -> next(contains[22]) = contains[22])
+        & (route[17][contains[21]] != 23 -> next(contains[23]) = contains[23])
+        & (route[17][contains[21]] != 24 -> next(contains[24]) = contains[24])
+        & (route[17][contains[21]] != 25 -> next(contains[25]) = contains[25])
+        & (route[17][contains[21]] != 26 -> next(contains[26]) = contains[26])
+        & (route[17][contains[21]] != 27 -> next(contains[27]) = contains[27])
+        )
+    | (
+          contains[23] != 0
+        & contains[23] != 17
+        & contains[route[17][contains[23]]] = 0
+        & next(contains[23]) = 0
+        & (case
+            route[17][contains[23]] = 1 : next(contains[1]) = contains[23];
+            route[17][contains[23]] = 2 : next(contains[2]) = contains[23];
+            route[17][contains[23]] = 3 : next(contains[3]) = contains[23];
+            route[17][contains[23]] = 4 : next(contains[4]) = contains[23];
+            route[17][contains[23]] = 5 : next(contains[5]) = contains[23];
+            route[17][contains[23]] = 6 : next(contains[6]) = contains[23];
+            route[17][contains[23]] = 7 : next(contains[7]) = contains[23];
+            route[17][contains[23]] = 8 : next(contains[8]) = contains[23];
+            route[17][contains[23]] = 9 : next(contains[9]) = contains[23];
+            route[17][contains[23]] = 10 : next(contains[10]) = contains[23];
+            route[17][contains[23]] = 11 : next(contains[11]) = contains[23];
+            route[17][contains[23]] = 12 : next(contains[12]) = contains[23];
+            route[17][contains[23]] = 13 : next(contains[13]) = contains[23];
+            route[17][contains[23]] = 14 : next(contains[14]) = contains[23];
+            route[17][contains[23]] = 15 : next(contains[15]) = contains[23];
+            route[17][contains[23]] = 16 : next(contains[16]) = contains[23];
+            route[17][contains[23]] = 17 : next(contains[17]) = contains[23];
+            route[17][contains[23]] = 18 : next(contains[18]) = contains[23];
+            route[17][contains[23]] = 19 : next(contains[19]) = contains[23];
+            route[17][contains[23]] = 20 : next(contains[20]) = contains[23];
+            route[17][contains[23]] = 21 : next(contains[21]) = contains[23];
+            route[17][contains[23]] = 22 : next(contains[22]) = contains[23];
+            route[17][contains[23]] = 23 : next(contains[23]) = contains[23];
+            route[17][contains[23]] = 24 : next(contains[24]) = contains[23];
+            route[17][contains[23]] = 25 : next(contains[25]) = contains[23];
+            route[17][contains[23]] = 26 : next(contains[26]) = contains[23];
+            route[17][contains[23]] = 27 : next(contains[27]) = contains[23];
+            esac)
+        & (route[17][contains[23]] != 1 -> next(contains[1]) = contains[1])
+        & (route[17][contains[23]] != 2 -> next(contains[2]) = contains[2])
+        & (route[17][contains[23]] != 3 -> next(contains[3]) = contains[3])
+        & (route[17][contains[23]] != 4 -> next(contains[4]) = contains[4])
+        & (route[17][contains[23]] != 5 -> next(contains[5]) = contains[5])
+        & (route[17][contains[23]] != 6 -> next(contains[6]) = contains[6])
+        & (route[17][contains[23]] != 7 -> next(contains[7]) = contains[7])
+        & (route[17][contains[23]] != 8 -> next(contains[8]) = contains[8])
+        & (route[17][contains[23]] != 9 -> next(contains[9]) = contains[9])
+        & (route[17][contains[23]] != 10 -> next(contains[10]) = contains[10])
+        & (route[17][contains[23]] != 11 -> next(contains[11]) = contains[11])
+        & (route[17][contains[23]] != 12 -> next(contains[12]) = contains[12])
+        & (route[17][contains[23]] != 13 -> next(contains[13]) = contains[13])
+        & (route[17][contains[23]] != 14 -> next(contains[14]) = contains[14])
+        & (route[17][contains[23]] != 15 -> next(contains[15]) = contains[15])
+        & (route[17][contains[23]] != 16 -> next(contains[16]) = contains[16])
+        & (route[17][contains[23]] != 17 -> next(contains[17]) = contains[17])
+        & (route[17][contains[23]] != 18 -> next(contains[18]) = contains[18])
+        & (route[17][contains[23]] != 19 -> next(contains[19]) = contains[19])
+        & (route[17][contains[23]] != 20 -> next(contains[20]) = contains[20])
+        & (route[17][contains[23]] != 21 -> next(contains[21]) = contains[21])
+        & (route[17][contains[23]] != 22 -> next(contains[22]) = contains[22])
+        & (route[17][contains[23]] != 24 -> next(contains[24]) = contains[24])
+        & (route[17][contains[23]] != 25 -> next(contains[25]) = contains[25])
+        & (route[17][contains[23]] != 26 -> next(contains[26]) = contains[26])
+        & (route[17][contains[23]] != 27 -> next(contains[27]) = contains[27])
+        )
+    );

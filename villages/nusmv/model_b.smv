@@ -1,0 +1,81 @@
+MODULE main
+DEFINE
+    distance := [[-1, 29, 21, -1], [29, -1, 17, 32], [21, 17, -1, 37], [-1, 32, 37, -1]];
+VAR
+    t_content : 0..320;
+    v_content : array 0..3 of -1..200;
+    v_alive : array 0..3 of boolean;
+    loc : 0..3;
+
+
+INIT v_content[1] = 40;
+INIT v_alive[1] = TRUE;
+
+INIT v_content[2] = 30;
+INIT v_alive[2] = TRUE;
+
+INIT v_content[3] = 145;
+INIT v_alive[3] = TRUE;
+
+
+INIT t_content = 320;
+INIT loc = 0;
+
+INVAR v_content[0] = -1;
+INVAR v_alive[0] = TRUE;
+
+
+INVAR v_content[1] <= 120;
+INVAR v_content[2] <= 120;
+INVAR v_content[3] <= 200;
+
+
+TRANS next(v_content[1]) > 0 ? next(v_alive[1]) = TRUE : next(v_alive[1]) = FALSE;
+TRANS (v_alive[1] & v_content[1] - distance[loc][next(loc)] > 0)
+    ? (next(v_content[1]) = v_content[1] - distance[loc][next(loc)] + 
+        (next(loc) = 1 ? t_content - next(t_content) : 0)) 
+    : next(v_content[1]) = -1;
+
+TRANS next(v_content[2]) > 0 ? next(v_alive[2]) = TRUE : next(v_alive[2]) = FALSE;
+TRANS (v_alive[2] & v_content[2] - distance[loc][next(loc)] > 0)
+    ? (next(v_content[2]) = v_content[2] - distance[loc][next(loc)] + 
+        (next(loc) = 2 ? t_content - next(t_content) : 0)) 
+    : next(v_content[2]) = -1;
+
+TRANS next(v_content[3]) > 0 ? next(v_alive[3]) = TRUE : next(v_alive[3]) = FALSE;
+TRANS (v_alive[3] & v_content[3] - distance[loc][next(loc)] > 0)
+    ? (next(v_content[3]) = v_content[3] - distance[loc][next(loc)] + 
+        (next(loc) = 3 ? t_content - next(t_content) : 0)) 
+    : next(v_content[3]) = -1;
+
+
+TRANS (
+      distance[loc][0] >= 0 & next(loc) = 0
+    | distance[loc][1] >= 0 & next(loc) = 1
+    | distance[loc][2] >= 0 & next(loc) = 2
+    | distance[loc][3] >= 0 & next(loc) = 3
+     );
+
+TRANS next(v_alive[loc]) ? 
+    (next(loc) = 0 ? next(t_content) = 320 : next(t_content) <= t_content) 
+    : next(t_content) = t_content;
+
+
+TRANS v_alive[1] | next(v_alive[1]);
+
+TRANS v_alive[2] | next(v_alive[2]);
+
+TRANS v_alive[3] | next(v_alive[3]);
+
+
+CTLSPEC AF (
+      v_alive[1] = FALSE
+    & v_alive[2] = FALSE
+    & v_alive[3] = FALSE
+    );
+
+LTLSPEC G F (
+      v_alive[1] = FALSE
+    | v_alive[2] = FALSE
+    | v_alive[3] = FALSE
+    );

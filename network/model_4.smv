@@ -1,0 +1,147 @@
+MODULE main
+DEFINE
+    route := [[0, 0, 0, 0, 0], [0, 0, 1, 1, 1], [0, 2, 0, 2, 2], [0, 3, 3, 0, 3], [0, 4, 4, 4, 0]];
+VAR
+    contains : array 0..4 of {0,1,3};
+    step : {SEND, RECEIVE, PROCESS};
+    focus : 1..4;
+INIT contains[0] = 0;
+INIT contains[1] = 0;
+INIT contains[2] = 0;
+INIT contains[3] = 0;
+INIT contains[4] = 0;
+INVAR contains[0] = 0;
+-- FOCUS rules
+TRANS (next(step) = SEND -> (
+    (
+        next(focus) = 1 & (
+            contains[1] = 0
+            )
+    )
+    | (
+        next(focus) = 3 & (
+            contains[3] = 0
+            )
+    )
+    ));
+TRANS (next(step) = RECEIVE -> (
+    (
+        next(focus) = 1 & (
+            contains[4] = 1
+            )
+    )
+    | (
+        next(focus) = 3 & (
+            contains[2] = 3
+            )
+    )
+    ));
+-- SEND step
+TRANS (next(step) = SEND & next(focus) = 1 ->
+    (
+          contains[1] = 0
+        & next(contains[1]) = 3
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        )
+    );
+TRANS (next(step) = SEND & next(focus) = 3 ->
+    (
+          contains[3] = 0
+        & next(contains[3]) = 1
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[4]) = contains[4]
+        )
+    );
+
+-- RECEIVE step
+TRANS (next(step) = RECEIVE & next(focus) = 1 ->
+    (
+          contains[4] = 1
+        & next(contains[4]) = 0
+        & next(contains[1]) = contains[1]
+        & next(contains[2]) = contains[2]
+        & next(contains[3]) = contains[3]
+        )
+    );
+TRANS (next(step) = RECEIVE & next(focus) = 3 ->
+    (
+          contains[2] = 3
+        & next(contains[2]) = 0
+        & next(contains[1]) = contains[1]
+        & next(contains[3]) = contains[3]
+        & next(contains[4]) = contains[4]
+        )
+    );
+
+-- PROCESS step
+TRANS ((next(step) = PROCESS & next(focus) = 1) ->
+    (
+          contains[4] != 0
+        & contains[4] != 1
+        & contains[route[1][contains[4]]] = 0
+        & next(contains[4]) = 0
+        & (case
+            route[1][contains[4]] = 1 : next(contains[1]) = contains[4];
+            route[1][contains[4]] = 2 : next(contains[2]) = contains[4];
+            route[1][contains[4]] = 3 : next(contains[3]) = contains[4];
+            route[1][contains[4]] = 4 : next(contains[4]) = contains[4];
+            esac)
+        & (route[1][contains[4]] != 1 -> next(contains[1]) = contains[1])
+        & (route[1][contains[4]] != 2 -> next(contains[2]) = contains[2])
+        & (route[1][contains[4]] != 3 -> next(contains[3]) = contains[3])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 2) ->
+    (
+          contains[1] != 0
+        & contains[1] != 2
+        & contains[route[2][contains[1]]] = 0
+        & next(contains[1]) = 0
+        & (case
+            route[2][contains[1]] = 1 : next(contains[1]) = contains[1];
+            route[2][contains[1]] = 2 : next(contains[2]) = contains[1];
+            route[2][contains[1]] = 3 : next(contains[3]) = contains[1];
+            route[2][contains[1]] = 4 : next(contains[4]) = contains[1];
+            esac)
+        & (route[2][contains[1]] != 2 -> next(contains[2]) = contains[2])
+        & (route[2][contains[1]] != 3 -> next(contains[3]) = contains[3])
+        & (route[2][contains[1]] != 4 -> next(contains[4]) = contains[4])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 3) ->
+    (
+          contains[2] != 0
+        & contains[2] != 3
+        & contains[route[3][contains[2]]] = 0
+        & next(contains[2]) = 0
+        & (case
+            route[3][contains[2]] = 1 : next(contains[1]) = contains[2];
+            route[3][contains[2]] = 2 : next(contains[2]) = contains[2];
+            route[3][contains[2]] = 3 : next(contains[3]) = contains[2];
+            route[3][contains[2]] = 4 : next(contains[4]) = contains[2];
+            esac)
+        & (route[3][contains[2]] != 1 -> next(contains[1]) = contains[1])
+        & (route[3][contains[2]] != 3 -> next(contains[3]) = contains[3])
+        & (route[3][contains[2]] != 4 -> next(contains[4]) = contains[4])
+        )
+    );
+TRANS ((next(step) = PROCESS & next(focus) = 4) ->
+    (
+          contains[3] != 0
+        & contains[3] != 4
+        & contains[route[4][contains[3]]] = 0
+        & next(contains[3]) = 0
+        & (case
+            route[4][contains[3]] = 1 : next(contains[1]) = contains[3];
+            route[4][contains[3]] = 2 : next(contains[2]) = contains[3];
+            route[4][contains[3]] = 3 : next(contains[3]) = contains[3];
+            route[4][contains[3]] = 4 : next(contains[4]) = contains[3];
+            esac)
+        & (route[4][contains[3]] != 1 -> next(contains[1]) = contains[1])
+        & (route[4][contains[3]] != 2 -> next(contains[2]) = contains[2])
+        & (route[4][contains[3]] != 4 -> next(contains[4]) = contains[4])
+        )
+    );

@@ -1,0 +1,5123 @@
+system diameter: 5
+reachable states: 640 (2^9.32193) out of 37500 (2^15.1946)
+  ------- State    1 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State    2 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State    3 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State    4 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State    5 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State    6 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State    7 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State    8 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State    9 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State   10 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State   11 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   12 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State   13 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State   14 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   15 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State   16 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State   17 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   18 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State   19 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State   20 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   21 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State   22 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State   23 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State   24 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   25 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State   26 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State   27 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State   28 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   29 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State   30 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State   31 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   32 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State   33 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   34 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State   35 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State   36 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State   37 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State   38 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State   39 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State   40 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State   41 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State   42 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State   43 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State   44 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State   45 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   46 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State   47 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State   48 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   49 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State   50 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State   51 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State   52 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State   53 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State   54 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   55 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State   56 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State   57 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State   58 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   59 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State   60 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State   61 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   62 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State   63 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State   64 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State   65 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   66 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   67 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State   68 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State   69 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State   70 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State   71 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State   72 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   73 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State   74 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   75 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State   76 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State   77 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State   78 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   79 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State   80 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State   81 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   82 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State   83 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State   84 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State   85 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State   86 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State   87 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State   88 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State   89 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   90 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State   91 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State   92 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State   93 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State   94 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State   95 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State   96 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State   97 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State   98 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State   99 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  100 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  101 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  102 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  103 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  104 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  105 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  106 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  107 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  108 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  109 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  110 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  111 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  112 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  113 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  114 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  115 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  116 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  117 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  118 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  119 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  120 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  121 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  122 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  123 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  124 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  125 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  126 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  127 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  128 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  129 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  130 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  131 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  132 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  133 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  134 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  135 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  136 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  137 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  138 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  139 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  140 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  141 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  142 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  143 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  144 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  145 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  146 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  147 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  148 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  149 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  150 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  151 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  152 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  153 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  154 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  155 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  156 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  157 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  158 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  159 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  160 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  161 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  162 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  163 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  164 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  165 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  166 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  167 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  168 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  169 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  170 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  171 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  172 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  173 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  174 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  175 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  176 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  177 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  178 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  179 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  180 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  181 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  182 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  183 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  184 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  185 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  186 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  187 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  188 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  189 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  190 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  191 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  192 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  193 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  194 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  195 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  196 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  197 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  198 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  199 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  200 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  201 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  202 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  203 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  204 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  205 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  206 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  207 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  208 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  209 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  210 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  211 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  212 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  213 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  214 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  215 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  216 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  217 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  218 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  219 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  220 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State  221 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  222 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  223 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  224 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  225 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  226 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  227 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  228 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  229 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State  230 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  231 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  232 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  233 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  234 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  235 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  236 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  237 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  238 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  239 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  240 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  241 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  242 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  243 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  244 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  245 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  246 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  247 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  248 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  249 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  250 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  251 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  252 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  253 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  254 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  255 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  256 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  257 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  258 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  259 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  260 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  261 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  262 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  263 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  264 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  265 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  266 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  267 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  268 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State  269 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  270 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  271 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  272 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  273 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  274 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State  275 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  276 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  277 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State  278 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  279 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  280 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  281 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  282 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  283 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  284 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State  285 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  286 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  287 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  288 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  289 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  290 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  291 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  292 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  293 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  294 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  295 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  296 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  297 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  298 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  299 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  300 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  301 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  302 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  303 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  304 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  305 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  306 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  307 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  308 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  309 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  310 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  311 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  312 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  313 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  314 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  315 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  316 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  317 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  318 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  319 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  320 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  321 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  322 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  323 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  324 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  325 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  326 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  327 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  328 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  329 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  330 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  331 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  332 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  333 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State  334 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  335 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  336 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  337 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  338 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State  339 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  340 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  341 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  342 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  343 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  344 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  345 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  346 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  347 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  348 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  349 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  350 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  351 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  352 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  353 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  354 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  355 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  356 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  357 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  358 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  359 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  360 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  361 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  362 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  363 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  364 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  365 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  366 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  367 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  368 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  369 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  370 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  371 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  372 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  373 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  374 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  375 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  376 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  377 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  378 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  379 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  380 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  381 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  382 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  383 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  384 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  385 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  386 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  387 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  388 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  389 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  390 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  391 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  392 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  393 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  394 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  395 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  396 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  397 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  398 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  399 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  400 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  401 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  402 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  403 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  404 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  405 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  406 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  407 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  408 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  409 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  410 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  411 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  412 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  413 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  414 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  415 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  416 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  417 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  418 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  419 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  420 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  421 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  422 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  423 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  424 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  425 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  426 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  427 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  428 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  429 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  430 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  431 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  432 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  433 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  434 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  435 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  436 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  437 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  438 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  439 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  440 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  441 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  442 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  443 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  444 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  445 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  446 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  447 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  448 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  449 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  450 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  451 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  452 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  453 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  454 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  455 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  456 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  457 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  458 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  459 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  460 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  461 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  462 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  463 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  464 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  465 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  466 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  467 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  468 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  469 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  470 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 1
+  ------- State  471 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  472 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  473 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  474 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  475 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  476 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  477 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 2
+  step = PROCESS
+  focus = 1
+  ------- State  478 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 1
+  ------- State  479 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  480 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  481 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  482 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  483 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  484 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  485 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  486 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  487 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  488 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 2
+  ------- State  489 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  490 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 2
+  ------- State  491 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  492 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  493 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  494 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  495 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  496 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 1
+  ------- State  497 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  498 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  499 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  500 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  501 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 3
+  step = PROCESS
+  focus = 1
+  ------- State  502 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 1
+  ------- State  503 ------
+  contains[0] = 0
+  contains[1] = 0
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  504 ------
+  contains[0] = 0
+  contains[1] = 4
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  505 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  506 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  507 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  508 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  509 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  510 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 2
+  ------- State  511 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  512 ------
+  contains[0] = 0
+  contains[1] = 2
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 2
+  ------- State  513 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  514 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  515 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  516 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State  517 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  518 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  519 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State  520 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  521 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  522 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  523 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State  524 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  525 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  526 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  527 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  528 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State  529 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State  530 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  531 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  532 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State  533 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  534 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  535 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  536 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  537 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State  538 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  539 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  540 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  541 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State  542 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  543 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  544 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  545 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  546 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  547 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  548 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  549 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  550 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  551 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  552 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  553 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  554 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  555 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  556 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  557 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  558 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  559 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  560 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  561 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  562 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  563 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  564 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  565 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  566 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  567 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  568 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  569 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  570 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 2
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  571 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  572 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  573 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 2
+  ------- State  574 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 2
+  ------- State  575 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  576 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  577 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = PROCESS
+  focus = 2
+  ------- State  578 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 2
+  step = SEND
+  focus = 2
+  ------- State  579 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = PROCESS
+  focus = 2
+  ------- State  580 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = SEND
+  focus = 2
+  ------- State  581 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  582 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 4
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  583 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = PROCESS
+  focus = 2
+  ------- State  584 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 0
+  contains[3] = 1
+  contains[4] = 3
+  step = SEND
+  focus = 2
+  ------- State  585 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  586 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  587 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 0
+  step = PROCESS
+  focus = 3
+  ------- State  588 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  589 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  590 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = PROCESS
+  focus = 3
+  ------- State  591 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  592 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  593 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  594 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  595 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  596 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = SEND
+  focus = 3
+  ------- State  597 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  598 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  599 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 4
+  ------- State  600 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  601 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  602 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 2
+  step = SEND
+  focus = 3
+  ------- State  603 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 4
+  ------- State  604 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  605 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  606 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  607 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  608 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  609 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = PROCESS
+  focus = 3
+  ------- State  610 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  611 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  612 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  613 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  614 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = PROCESS
+  focus = 3
+  ------- State  615 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  616 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  617 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  618 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = SEND
+  focus = 3
+  ------- State  619 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  620 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  621 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  622 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  623 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 1
+  step = RECEIVE
+  focus = 4
+  ------- State  624 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  625 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 0
+  contains[4] = 3
+  step = SEND
+  focus = 3
+  ------- State  626 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 4
+  ------- State  627 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 4
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  628 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  629 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  630 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 2
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  ------- State  631 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  632 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  633 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = PROCESS
+  focus = 4
+  ------- State  634 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = SEND
+  focus = 4
+  ------- State  635 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 0
+  step = RECEIVE
+  focus = 3
+  ------- State  636 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 2
+  step = RECEIVE
+  focus = 3
+  ------- State  637 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 1
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  638 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 3
+  ------- State  639 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 1
+  step = RECEIVE
+  focus = 1
+  ------- State  640 ------
+  contains[0] = 0
+  contains[1] = 3
+  contains[2] = 3
+  contains[3] = 1
+  contains[4] = 3
+  step = RECEIVE
+  focus = 3
+  -------------------------

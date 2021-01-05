@@ -1,0 +1,54 @@
+MODULE main
+DEFINE
+    distance := {{ distance }};
+VAR
+    t_content : 0..{{ t_max_cap }};
+    v_content : array 0..{{ distance | count - 1 }} of -1..{{ v_max_cap | max}};
+    v_alive : array 0..{{ distance | count - 1 }} of boolean;
+    loc : 0..{{ distance | count - 1 }};
+
+{% for v in range(1, distance | count) %}
+INIT v_content[{{ v }}] = {{ v_init_cap[v] }};
+INIT v_alive[{{ v }}] = TRUE;
+{% endfor %}
+
+INIT t_content = {{ t_max_cap }};
+INIT loc = 0;
+
+INVAR v_content[0] = -1;
+INVAR v_alive[0] = TRUE;
+
+{% for v in range(1, distance | count) %}
+INVAR v_content[{{ v }}] <= {{ v_max_cap[v] }};
+{%- endfor %}
+
+{% for v in range(1, distance | count) %}
+TRANS next(v_content[{{ v }}]) > 0 ? next(v_alive[{{ v }}]) = TRUE : next(v_alive[{{ v }}]) = FALSE;
+TRANS (v_alive[{{ v }}] & v_content[{{ v }}] - distance[loc][next(loc)] > 0)
+    ? (next(v_content[{{ v }}]) = v_content[{{ v }}] - distance[loc][next(loc)] + 
+        (next(loc) = {{ v }} ? t_content - next(t_content) : 0)) 
+    : next(v_content[{{ v }}]) = -1;
+{% endfor %}
+
+TRANS ({% for v in range(distance | count) %}
+    {% if not loop.first %}| {% else %}  {% endif %}distance[loc][{{ v }}] >= 0 & next(loc) = {{ v }}
+    {%- endfor %}
+     );
+
+TRANS next(v_alive[loc]) ? 
+    (next(loc) = 0 ? next(t_content) = {{ t_max_cap }} : next(t_content) <= t_content) 
+    : next(t_content) = t_content;
+
+{% for v in range(1, distance | count) %}
+TRANS v_alive[{{ v }}] | next(v_alive[{{ v }}]);
+{% endfor %}
+
+CTLSPEC AF ({% for v in range(1, distance | count) %}
+    {% if not loop.first %}& {% else %}  {% endif %}v_alive[{{ v }}] = FALSE
+    {%- endfor %}
+    );
+
+LTLSPEC G F ({% for v in range(1, distance | count) %}
+    {% if not loop.first %}| {% else %}  {% endif %}v_alive[{{ v }}] = FALSE
+    {%- endfor %}
+    );

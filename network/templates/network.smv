@@ -1,0 +1,76 @@
+MODULE main
+DEFINE
+    route := {{ route }};
+VAR
+    contains : array 0..{{ channels | count - 1 }} of {0{% for n in main %},{{ n }}{% endfor %}};
+    step : {SEND, RECEIVE, PROCESS};
+    focus : 1..{{ route | count - 1 }};
+{% for i in range(channels | count) -%} 
+INIT contains[{{ i }}] = 0;
+{% endfor -%}
+INVAR contains[0] = 0;
+-- FOCUS rules
+TRANS (next(step) = SEND -> (
+    {% for m in main -%}
+    {% if not loop.first %}| {% endif %}(
+        next(focus) = {{ m }} & (
+            {% for d in main if d != m -%}
+            {% if not loop.first %}| {% endif %}contains[{{ route[m][d] }}] = 0
+            {% endfor -%}
+        )
+    )
+    {% endfor %}));
+TRANS (next(step) = RECEIVE -> (
+    {% for m in main -%}
+    {% if not loop.first %}| {% endif %}(
+        next(focus) = {{ m }} & (
+            {% for i_c in range(1,channels | count) if channels[i_c][1] == m -%}
+            {% if not loop.first %}| {% endif %}contains[{{ i_c }}] = {{ m }}
+            {% endfor -%}
+        )
+    )
+    {% endfor %}));
+-- SEND step
+{% for m in main -%}
+TRANS (next(step) = SEND & next(focus) = {{ m }} ->
+    {% for d in main if d != m -%}
+    {% if not loop.first %}| {% endif %}(
+          contains[{{ route[m][d] }}] = 0
+        & next(contains[{{ route[m][d] }}]) = {{ d }}
+        {% for c in range(1, channels | count) if c != route[m][d] -%}
+        & next(contains[{{ c }}]) = contains[{{ c }}]
+        {% endfor -%})
+    {% endfor -%});
+{% endfor %}
+-- RECEIVE step
+{% for m in main -%}
+TRANS (next(step) = RECEIVE & next(focus) = {{ m }} ->
+    {% for i_c in range(1,channels | count) if channels[i_c][1] == m -%}
+    {% if not loop.first %}| {% endif %}(
+          contains[{{ i_c }}] = {{ m }}
+        & next(contains[{{ i_c }}]) = 0
+        {% for c in range(1, channels | count) if c != i_c -%}
+        & next(contains[{{ c }}]) = contains[{{ c }}]
+        {% endfor -%})
+    {% endfor -%});
+{% endfor %}
+-- PROCESS step
+{% for n in range(1, route | count) -%}
+TRANS ((next(step) = PROCESS & next(focus) = {{ n }}) ->
+    {% for i_c in range(1,channels | count) if channels[i_c][1] == n -%}
+    {% if not loop.first %}| {% endif %}(
+          contains[{{ i_c }}] != 0
+        & contains[{{ i_c }}] != {{ n }}
+        & contains[route[{{ n }}][contains[{{ i_c }}]]] = 0
+        & next(contains[{{ i_c }}]) = 0
+        & (case
+            {% for o_c in range(1,channels | count) -%}
+            route[{{ n }}][contains[{{ i_c }}]] = {{ o_c }} : next(contains[{{ o_c }}]) = contains[{{ i_c }}];
+            {% endfor -%}
+            esac)
+        {% for c in range(1, channels | count) if c != i_c -%}
+        & (route[{{ n }}][contains[{{ i_c }}]] != {{ c }} -> next(contains[{{ c }}]) = contains[{{ c }}])
+        {% endfor -%}
+    )
+    {% endfor -%});
+{% endfor %}

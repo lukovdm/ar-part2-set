@@ -1,0 +1,11 @@
+============================== Mace4 =================================
+Mace4 (32) version Dec-2007, Dec 2007.
+Process 1086850 was started by maglev on Ceasium,
+Tue Dec  1 17:30:20 2020
+The command was "mace4 -c -f a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+Fatal error:  read_all_input, file a.in not found
+

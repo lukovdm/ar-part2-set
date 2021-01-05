@@ -1,0 +1,115 @@
+============================== Mace4 =================================
+Mace4 (32) version Dec-2007, Dec 2007.
+Process 1088825 was started by maglev on Ceasium,
+Tue Dec  1 17:35:53 2020
+The command was "mace4 -c -f a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file a.in
+
+
+formulas(assumptions).
+R(a(x,x),x).
+R(a(x,y),a(y,x)).
+R(a(x,a(y,z)),a(a(x,y),z)).
+R(x,y) -> R(a(x,z),a(y,z)).
+R(x,y) -> R(a(z,x),a(z,y)).
+RR(x,x).
+RR(x,y) & R(y,z) -> RR(x,z).
+end_of_list.
+
+formulas(goals).
+R(a(p,a(q,a(p,a(q,a(p,a(q,p)))))),a(p,q)).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 R(x,y) -> R(a(x,z),a(y,z)) # label(non_clause).  [assumption].
+2 R(x,y) -> R(a(z,x),a(z,y)) # label(non_clause).  [assumption].
+3 RR(x,y) & R(y,z) -> RR(x,z) # label(non_clause).  [assumption].
+4 R(a(p,a(q,a(p,a(q,a(p,a(q,p)))))),a(p,q)) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+R(a(x,x),x).
+R(a(x,y),a(y,x)).
+R(a(x,a(y,z)),a(a(x,y),z)).
+-R(x,y) | R(a(x,z),a(y,z)).
+-R(x,y) | R(a(z,x),a(z,y)).
+RR(x,x).
+-RR(x,y) | -R(y,z) | RR(x,z).
+-R(a(p,a(q,a(p,a(q,a(p,a(q,p)))))),a(p,q)).
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no domain elements in the input.
+
+============================== DOMAIN SIZE 2 =========================
+
+============================== STATISTICS ============================
+
+For domain size 2.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=41, kept=37.
+Selections=21, assignments=41, propagations=18, current_models=0.
+Rewrite_terms=420, rewrite_bools=154, indexes=63.
+Rules_from_neg_clauses=0, cross_offs=0.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 3 =========================
+
+============================== MODEL =================================
+
+interpretation( 3, [number=1, seconds=0], [
+
+        function(p, [ 0 ]),
+
+        function(q, [ 1 ]),
+
+        function(a(_,_), [
+			   2, 0, 2,
+			   1, 2, 2,
+			   2, 2, 2 ]),
+
+        relation(R(_,_), [
+			   0, 1, 1,
+			   1, 0, 1,
+			   1, 1, 1 ]),
+
+        relation(RR(_,_), [
+			   1, 1, 1,
+			   1, 1, 1,
+			   1, 1, 1 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 3.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=124, kept=115.
+Selections=879, assignments=2498, propagations=948, current_models=1.
+Rewrite_terms=26875, rewrite_bools=12988, indexes=2550.
+Rules_from_neg_clauses=4, cross_offs=449.
+
+============================== end of statistics =====================
+
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 1088825 exit (max_models) Tue Dec  1 17:35:53 2020
+The process finished Tue Dec  1 17:35:53 2020
